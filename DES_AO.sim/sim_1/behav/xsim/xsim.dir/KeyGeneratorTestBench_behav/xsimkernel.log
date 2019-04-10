@@ -1,0 +1,4 @@
+Running: xsim.dir/KeyGeneratorTestBench_behav/xsimk.exe -simmode gui -wdb KeyGeneratorTestBench_behav.wdb -simrunnum 0 -socket 51840
+Design successfully loaded
+Design Loading Memory Usage: 7512 KB (Peak: 7512 KB)
+Design Loading CPU Usage: 30 ms

@@ -17,7 +17,7 @@ out_variable = "dataOut"
 # Generate verilog code
 with open("maps.v",'w') as file:
     for map_name in maps_perms.keys():
-        file.write("module {}(input [{:d}:0] {}, output [{:d}:0] {});\n".format(
+        file.write("module {}(input [0:{:d}] {}, output [0:{:d}] {});\n".format(
             map_name,
             maps_in_size[map_name]-1,
             in_variable,len(maps_perms[map_name])-1,

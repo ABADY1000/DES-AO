@@ -5,13 +5,13 @@ parity_drop_name = "ParityBitDropTable"
 
 with open("{}.v".format(module_name),"w") as file:
     # Generate header and IO ports
-    file.write("module {}(\n    input [63:0] key,\n".format(module_name))
+    file.write("module {}(\n    input [0:63] key,\n".format(module_name))
     for i in range(1,17):
-        file.write("    output [47:0] k{}{}\n".format(i,',' if i != 16 else ''))
+        file.write("    output [0:47] k{}{}\n".format(i,',' if i != 16 else ''))
     file.write("    );\n")
     # Generate needed wires
     for i in range(1,17):
-        file.write("    wire [25:0] left{}, right{};\n".format(i,i))
+        file.write("    wire [0:27] left{}, right{};\n".format(i,i))
     # Do initial parity drop permutation
     file.write("    {} PBDT(key,{{left1,right1}});\n".format(parity_drop_name))
     # Generate keys for all rounds using the key round module
@@ -23,9 +23,6 @@ with open("{}.v".format(module_name),"w") as file:
         if i != 16:
             file.write("        .leftOut(left{}),\n".format(i+1))
             file.write("        .rightOut(right{}),\n".format(i+1))
-        else:
-            file.write("        .leftOut(26'dz),\n")
-            file.write("        .rightOut(26'dz),\n")
         file.write("        .key(k{})\n".format(i))
         file.write("    );\n")
     file.write("endmodule\n")
