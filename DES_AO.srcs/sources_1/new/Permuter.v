@@ -175,7 +175,7 @@ module ExpansionDBoxTable(input [0:31] dataIn, output [0:47] dataOut);
     assign dataOut[41] = dataIn[28];
     assign dataOut[42] = dataIn[27];
     assign dataOut[43] = dataIn[28];
-    assign dataOut[44] = dataIn[30];
+    assign dataOut[44] = dataIn[29];
     assign dataOut[45] = dataIn[30];
     assign dataOut[46] = dataIn[31];
     assign dataOut[47] = dataIn[ 0];
