@@ -23,4 +23,5 @@
 module DES_Main(
 
     );
+    InitialPermutation IP();
 endmodule
