@@ -1,28 +1,19 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 04/10/2019 07:55:38 AM
-// Design Name: 
-// Module Name: DES_Main
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 
 module DES_Main(
     
     );
     
     
+||||||| merged common ancestors
+
+module DES_Main(
+
+    );
+    InitialPermutation IP();
+=======
+module DES_Main;
+>>>>>>> e8bdddde163771ed8373f307ea16de1ce3d6221b
 endmodule

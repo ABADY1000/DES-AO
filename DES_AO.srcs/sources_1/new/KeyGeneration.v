@@ -1,38 +1,38 @@
 module KeyGeneration(
-    input [63:0] key,
-    output [47:0] k1,
-    output [47:0] k2,
-    output [47:0] k3,
-    output [47:0] k4,
-    output [47:0] k5,
-    output [47:0] k6,
-    output [47:0] k7,
-    output [47:0] k8,
-    output [47:0] k9,
-    output [47:0] k10,
-    output [47:0] k11,
-    output [47:0] k12,
-    output [47:0] k13,
-    output [47:0] k14,
-    output [47:0] k15,
-    output [47:0] k16
+    input [0:63] key,
+    output [0:47] k1,
+    output [0:47] k2,
+    output [0:47] k3,
+    output [0:47] k4,
+    output [0:47] k5,
+    output [0:47] k6,
+    output [0:47] k7,
+    output [0:47] k8,
+    output [0:47] k9,
+    output [0:47] k10,
+    output [0:47] k11,
+    output [0:47] k12,
+    output [0:47] k13,
+    output [0:47] k14,
+    output [0:47] k15,
+    output [0:47] k16
     );
-    wire [25:0] left1, right1;
-    wire [25:0] left2, right2;
-    wire [25:0] left3, right3;
-    wire [25:0] left4, right4;
-    wire [25:0] left5, right5;
-    wire [25:0] left6, right6;
-    wire [25:0] left7, right7;
-    wire [25:0] left8, right8;
-    wire [25:0] left9, right9;
-    wire [25:0] left10, right10;
-    wire [25:0] left11, right11;
-    wire [25:0] left12, right12;
-    wire [25:0] left13, right13;
-    wire [25:0] left14, right14;
-    wire [25:0] left15, right15;
-    wire [25:0] left16, right16;
+    wire [0:27] left1, right1;
+    wire [0:27] left2, right2;
+    wire [0:27] left3, right3;
+    wire [0:27] left4, right4;
+    wire [0:27] left5, right5;
+    wire [0:27] left6, right6;
+    wire [0:27] left7, right7;
+    wire [0:27] left8, right8;
+    wire [0:27] left9, right9;
+    wire [0:27] left10, right10;
+    wire [0:27] left11, right11;
+    wire [0:27] left12, right12;
+    wire [0:27] left13, right13;
+    wire [0:27] left14, right14;
+    wire [0:27] left15, right15;
+    wire [0:27] left16, right16;
     ParityBitDropTable PBDT(key,{left1,right1});
     KeyRound #(1) KR1(
         .leftIn(left1),
@@ -142,8 +142,6 @@ module KeyGeneration(
     KeyRound #(1) KR16(
         .leftIn(left16),
         .rightIn(right16),
-        .leftOut(26'dz),
-        .rightOut(26'dz),
         .key(k16)
     );
 endmodule

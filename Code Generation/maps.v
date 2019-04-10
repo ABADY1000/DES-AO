@@ -1,4 +1,4 @@
-module InitialPermutation(input [63:0] dataIn, output [63:0] dataOut);
+module InitialPermutation(input [0:63] dataIn, output [0:63] dataOut);
     assign dataOut[ 0] = dataIn[57];
     assign dataOut[ 1] = dataIn[49];
     assign dataOut[ 2] = dataIn[41];
@@ -64,7 +64,7 @@ module InitialPermutation(input [63:0] dataIn, output [63:0] dataOut);
     assign dataOut[62] = dataIn[14];
     assign dataOut[63] = dataIn[ 6];
 endmodule
-module FinalPermutation(input [63:0] dataIn, output [63:0] dataOut);
+module FinalPermutation(input [0:63] dataIn, output [0:63] dataOut);
     assign dataOut[ 0] = dataIn[39];
     assign dataOut[ 1] = dataIn[ 7];
     assign dataOut[ 2] = dataIn[47];
@@ -130,7 +130,7 @@ module FinalPermutation(input [63:0] dataIn, output [63:0] dataOut);
     assign dataOut[62] = dataIn[56];
     assign dataOut[63] = dataIn[24];
 endmodule
-module ExpansionDBoxTable(input [31:0] dataIn, output [47:0] dataOut);
+module ExpansionDBoxTable(input [0:31] dataIn, output [0:47] dataOut);
     assign dataOut[ 0] = dataIn[31];
     assign dataOut[ 1] = dataIn[ 0];
     assign dataOut[ 2] = dataIn[ 1];
@@ -180,7 +180,7 @@ module ExpansionDBoxTable(input [31:0] dataIn, output [47:0] dataOut);
     assign dataOut[46] = dataIn[31];
     assign dataOut[47] = dataIn[ 0];
 endmodule
-module StraightDBoxTable(input [31:0] dataIn, output [31:0] dataOut);
+module StraightDBoxTable(input [0:31] dataIn, output [0:31] dataOut);
     assign dataOut[ 0] = dataIn[15];
     assign dataOut[ 1] = dataIn[ 6];
     assign dataOut[ 2] = dataIn[19];
@@ -214,7 +214,7 @@ module StraightDBoxTable(input [31:0] dataIn, output [31:0] dataOut);
     assign dataOut[30] = dataIn[ 3];
     assign dataOut[31] = dataIn[24];
 endmodule
-module ParityBitDropTable(input [63:0] dataIn, output [55:0] dataOut);
+module ParityBitDropTable(input [0:63] dataIn, output [0:55] dataOut);
     assign dataOut[ 0] = dataIn[56];
     assign dataOut[ 1] = dataIn[48];
     assign dataOut[ 2] = dataIn[40];
@@ -272,7 +272,7 @@ module ParityBitDropTable(input [63:0] dataIn, output [55:0] dataOut);
     assign dataOut[54] = dataIn[11];
     assign dataOut[55] = dataIn[ 3];
 endmodule
-module KeyCompressionTable(input [55:0] dataIn, output [47:0] dataOut);
+module KeyCompressionTable(input [0:55] dataIn, output [0:47] dataOut);
     assign dataOut[ 0] = dataIn[13];
     assign dataOut[ 1] = dataIn[16];
     assign dataOut[ 2] = dataIn[10];
