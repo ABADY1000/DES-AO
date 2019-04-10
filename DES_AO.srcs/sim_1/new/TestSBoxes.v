@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/10/2019 07:55:38 AM
+// Create Date: 04/10/2019 04:18:06 PM
 // Design Name: 
-// Module Name: DES_Main
+// Module Name: TestSBoxes
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,28 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DES_Main(
+module TestSBoxes;
+
+    reg [0:5] data;
+    wire [0:3] result;
     
-    );
+    S1 soso(data, result);
     
+    initial begin
     
+    data = 6'b01_0011;
+    
+    #10;
+    
+    data = 6'b00_0110;
+    
+    #10;
+    
+    data = 6'b10_1100;
+    
+    #10;
+    
+    data = 6'b11_1111;
+    
+    end
 endmodule

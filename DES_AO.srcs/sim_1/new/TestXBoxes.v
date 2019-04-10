@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/10/2019 07:55:38 AM
+// Create Date: 04/10/2019 04:08:13 PM
 // Design Name: 
-// Module Name: DES_Main
+// Module Name: TestXBoxes
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DES_Main(
-    
+module TestXBoxes(
+
     );
-    
-    
 endmodule

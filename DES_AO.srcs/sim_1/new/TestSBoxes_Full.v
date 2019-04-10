@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/10/2019 07:55:38 AM
+// Create Date: 04/10/2019 05:24:22 PM
 // Design Name: 
-// Module Name: DES_Main
+// Module Name: TestSBoxes_Full
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module DES_Main(
+module TestSBoxes_Full;
     
-    );
+    reg [0:47] dataIn;
+    wire [0:31] dataOut;
     
+    SBoxes sb(dataIn, dataOut);
     
+    initial begin
+        # 100;
+        dataIn = 47'D163169927772496;
+        #100;
+        dataIn = 47'D158169297111021;
+        #100;
+    end
+
 endmodule
