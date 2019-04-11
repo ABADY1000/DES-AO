@@ -1,25 +1,7 @@
 Vivado Simulator 2018.1
 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: D:/ProgramFiles/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RoundTesting_behav xil_defaultlib.RoundTesting xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot PipelinedRoundsTestBench_behav xil_defaultlib.PipelinedRoundsTestBench xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ExpansionDBoxTable
-Compiling module xil_defaultlib.S1
-Compiling module xil_defaultlib.S2
-Compiling module xil_defaultlib.S3
-Compiling module xil_defaultlib.S4
-Compiling module xil_defaultlib.S5
-Compiling module xil_defaultlib.S6
-Compiling module xil_defaultlib.S7
-Compiling module xil_defaultlib.S8
-Compiling module xil_defaultlib.SBoxes
-Compiling module xil_defaultlib.StraightDBoxTable
-Compiling module xil_defaultlib.FFunction
-Compiling module xil_defaultlib.Round
-Compiling module xil_defaultlib.RoundTesting
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot RoundTesting_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
