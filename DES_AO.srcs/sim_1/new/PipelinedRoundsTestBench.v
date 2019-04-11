@@ -22,6 +22,9 @@ module PipelinedRoundsTestBench;
     @(negedge clk);
     reset = 0;
     repeat(20) @(negedge clk);
+    dataIn = 64'hC0B7A8D05F3A829C;
+    encrypt = 0;
+    repeat(20) @(negedge clk);
     $finish;
     end
 endmodule

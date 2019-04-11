@@ -9,8 +9,6 @@ module PipelinedRounds (
     );
     wire [0:47] k1,k2,k3,k4,k5,k6,k7,k8,k9,k10,k11,k12,k13,k14,k15,k16;
     reg [0:47] ck1,ck2,ck3,ck4,ck5,ck6,ck7,ck8,ck9,ck10,ck11,ck12,ck13,ck14,ck15,ck16;
-    reg [0:63] initChosenPerm, finalChosenPerm;
-    reg [0:63] initPermIn, finalPermIn;
     wire [0:63] initPermOut, finalPermOut;
     wire [0:31] leftIn1, rightIn1,leftOut1, rightOut1;
     wire [0:31] leftIn2, rightIn2,leftOut2, rightOut2;
@@ -257,29 +255,15 @@ module PipelinedRounds (
     Register InitReg(
         .clk(clk),
         .reset(reset),
-        .dataIn(initChosenPerm),
+        .dataIn(initPermOut),
         .dataOut(roundsIn)
     );
     Register FinalReg(
         .clk(clk),
         .reset(reset),
-        .dataIn(finalChosenPerm),
+        .dataIn(finalPermOut),
         .dataOut(dataOut)
     );
-    InitialPermutation IP(initPermIn,initPermOut);
-    FinalPermutation FP(finalPermIn,finalPermOut);
-    always @(*) begin
-        if (encrypt) begin
-            initPermIn = dataIn;
-            finalPermIn = roundsOut;
-            initChosenPerm = initPermOut;
-            finalChosenPerm = finalPermOut;
-        end
-        else begin
-            initPermIn = roundsOut;
-            finalPermIn = dataIn;
-            initChosenPerm = finalPermOut;
-            finalChosenPerm = initPermOut;
-        end
-    end
+    InitialPermutation IP(dataIn,initPermOut);
+    FinalPermutation FP(roundsOut,finalPermOut);
 endmodule

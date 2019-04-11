@@ -17,3 +17,19 @@ open_wave_config D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcf
 source PipelinedRoundsTestBench.tcl
 save_wave_config {D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg}
 relaunch_sim
+save_wave_config {D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg}
+relaunch_sim
+open_wave_config {D:/Engineering/Eng_2019/EE460 Digital 2/Vivado_projects/Take_Home_Exam_2/ControllerTestBench_behav.wcfg}
+relaunch_sim
+close_sim
+launch_simulation
+open_wave_config D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg
+source PipelinedRoundsTestBench.tcl
+save_wave_config {D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg}
+relaunch_sim
+relaunch_sim
+save_wave_config {D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg
+source PipelinedRoundsTestBench.tcl

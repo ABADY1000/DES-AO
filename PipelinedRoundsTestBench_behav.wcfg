@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="7450000fs"></ZoomStartTime>
-      <ZoomEndTime time="52150001fs"></ZoomEndTime>
-      <Cursor1Time time="11600000fs"></Cursor1Time>
+      <ZoomStartTime time="188686100fs"></ZoomStartTime>
+      <ZoomEndTime time="236222396fs"></ZoomEndTime>
+      <Cursor1Time time="410000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="137"></NameColumnWidth>
-      <ValueColumnWidth column_width="132"></ValueColumnWidth>
+      <ValueColumnWidth column_width="128"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="39" />
+   <WVObjectSize size="42" />
    <wvobject fp_name="/PipelinedRoundsTestBench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -28,10 +28,16 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
+   <wvobject fp_name="/PipelinedRoundsTestBench/encrypt" type="logic">
+      <obj_property name="ElementShortName">encrypt</obj_property>
+      <obj_property name="ObjectShortName">encrypt</obj_property>
+   </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/key" type="array">
       <obj_property name="ElementShortName">key[0:63]</obj_property>
       <obj_property name="ObjectShortName">key[0:63]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/dataIn" type="array">
       <obj_property name="ElementShortName">dataIn[0:63]</obj_property>
@@ -45,9 +51,22 @@
       <obj_property name="label">InitReg</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
+   <wvobject fp_name="/PipelinedRoundsTestBench/PR/FP/dataIn" type="array">
+      <obj_property name="ElementShortName">dataIn[0:63]</obj_property>
+      <obj_property name="ObjectShortName">dataIn[0:63]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/PipelinedRoundsTestBench/PR/FP/dataOut" type="array">
+      <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck1" type="array">
       <obj_property name="ElementShortName">ck1[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck1[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG1/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
@@ -59,146 +78,205 @@
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck2" type="array">
       <obj_property name="ElementShortName">ck2[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck2[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG2/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG2</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck3" type="array">
       <obj_property name="ElementShortName">ck3[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck3[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG3/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG3</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck4" type="array">
       <obj_property name="ElementShortName">ck4[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck4[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG4/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG4</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck5" type="array">
       <obj_property name="ElementShortName">ck5[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck5[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG5/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG5</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck6" type="array">
       <obj_property name="ElementShortName">ck6[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck6[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG6/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG6</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck7" type="array">
       <obj_property name="ElementShortName">ck7[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck7[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG7/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG7</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck8" type="array">
       <obj_property name="ElementShortName">ck8[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck8[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG8/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG8</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck9" type="array">
       <obj_property name="ElementShortName">ck9[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck9[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG9/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG9</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck10" type="array">
       <obj_property name="ElementShortName">ck10[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck10[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG10/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG10</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck11" type="array">
       <obj_property name="ElementShortName">ck11[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck11[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG11/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG11</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck12" type="array">
       <obj_property name="ElementShortName">ck12[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck12[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG12/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG12</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck13" type="array">
       <obj_property name="ElementShortName">ck13[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck13[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG13/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG13</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck14" type="array">
       <obj_property name="ElementShortName">ck14[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck14[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG14/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG14</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck15" type="array">
       <obj_property name="ElementShortName">ck15[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck15[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG15/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">REG15</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck16" type="array">
       <obj_property name="ElementShortName">ck16[0:47]</obj_property>
       <obj_property name="ObjectShortName">ck16[0:47]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFD700</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/REG16/dataOut" type="array">
       <obj_property name="DisplayName">label</obj_property>
