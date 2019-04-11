@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 
-module PipelinedRoundsTestBench;
+module DESTestBench;
     reg clk, reset, encrypt;
     reg [0:63] key, dataIn;
     wire [0:63] dataOut;
-    PipelinedRounds PR(
+    DES DES1(
     .clk(clk),
     .reset(reset),
     .key(key),

@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module PipelinedRounds (
+module DES (
     input clk,
     input reset,
     input [0:63] dataIn,

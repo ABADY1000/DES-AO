@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="188686100fs"></ZoomStartTime>
-      <ZoomEndTime time="236222396fs"></ZoomEndTime>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="50793860fs"></ZoomEndTime>
       <Cursor1Time time="410000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="137"></NameColumnWidth>
-      <ValueColumnWidth column_width="128"></ValueColumnWidth>
+      <ValueColumnWidth column_width="124"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="42" />
+   <WVObjectSize size="40" />
    <wvobject fp_name="/PipelinedRoundsTestBench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -49,16 +49,6 @@
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="label">InitReg</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/PipelinedRoundsTestBench/PR/FP/dataIn" type="array">
-      <obj_property name="ElementShortName">dataIn[0:63]</obj_property>
-      <obj_property name="ObjectShortName">dataIn[0:63]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/PipelinedRoundsTestBench/PR/FP/dataOut" type="array">
-      <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
-      <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/PipelinedRoundsTestBench/PR/ck1" type="array">
