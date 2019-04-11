@@ -2,515 +2,70 @@
 # Vivado v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Wed Apr 10 21:21:14 2019
-# Process ID: 3840
-# Current directory: D:/Official/College/Eng 2019/EE460/project/DES-AO
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6776 D:\Official\College\Eng 2019\EE460\project\DES-AO\DES_AO.xpr
-# Log file: D:/Official/College/Eng 2019/EE460/project/DES-AO/vivado.log
-# Journal file: D:/Official/College/Eng 2019/EE460/project/DES-AO\vivado.jou
+# Start of session at: Thu Apr 11 17:39:28 2019
+# Process ID: 21172
+# Current directory: D:/Programming/Github/DES-AO
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24064 D:\Programming\Github\DES-AO\DES_AO.xpr
+# Log file: D:/Programming/Github/DES-AO/vivado.log
+# Journal file: D:/Programming/Github/DES-AO\vivado.jou
 #-----------------------------------------------------------
+Sourcing tcl script 'C:/Users/GIGABYTE-S/AppData/Roaming/Xilinx/Vivado/Vivado_init.tcl'
 start_gui
-open_project {D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.xpr}
-INFO: [Project 1-313] Project file moved from 'D:/Programming/Vivado/DES_AO' since last save.
+open_project D:/Programming/Github/DES-AO/DES_AO.xpr
+INFO: [Project 1-313] Project file moved from 'D:/Official/College/Eng 2019/EE460/project/DES-AO' since last save.
 Scanning sources...
 Finished scanning sources
-CRITICAL WARNING: [Board 49-67] The board_part definition was not found for digilentinc.com:basys3:part0:1.1. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.1/data/ip'.
-open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 788.754 ; gain = 108.785
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 825.324 ; gain = 141.613
 update_compile_order -fileset sources_1
-add_files -norecurse {{D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v}}
-update_compile_order -fileset sources_1
-add_files -norecurse {{D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Register.v}}
-update_compile_order -fileset sources_1
-set_property top PipelinedRounds [current_fileset]
-update_compile_order -fileset sources_1
-export_ip_user_files -of_objects  [get_files {{D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/DES_Main.v}}] -no_script -reset -force -quiet
-remove_files  {{D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/DES_Main.v}}
-file delete -force {D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/DES_Main.v}
-synth_design -rtl -name rtl_1
-Command: synth_design -rtl -name rtl_1
-Starting synth_design
-Using part: xc7a35tcpg236-1
-Top: PipelinedRounds
----------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:10 . Memory (MB): peak = 942.125 ; gain = 86.668
----------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'PipelinedRounds' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Round' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Round.v:3]
-INFO: [Synth 8-6157] synthesizing module 'FFunction' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/FFunction.v:3]
-INFO: [Synth 8-6157] synthesizing module 'ExpansionDBoxTable' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:133]
-INFO: [Synth 8-6155] done synthesizing module 'ExpansionDBoxTable' (1#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:133]
-INFO: [Synth 8-6157] synthesizing module 'SBoxes' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBoxes.v:3]
-INFO: [Synth 8-6157] synthesizing module 'S1' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'S1' (2#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:1]
-INFO: [Synth 8-6157] synthesizing module 'S2' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:83]
-INFO: [Synth 8-6155] done synthesizing module 'S2' (3#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:83]
-INFO: [Synth 8-6157] synthesizing module 'S3' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:165]
-INFO: [Synth 8-6155] done synthesizing module 'S3' (4#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:165]
-INFO: [Synth 8-6157] synthesizing module 'S4' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:247]
-INFO: [Synth 8-6155] done synthesizing module 'S4' (5#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:247]
-INFO: [Synth 8-6157] synthesizing module 'S5' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:329]
-INFO: [Synth 8-6155] done synthesizing module 'S5' (6#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:329]
-INFO: [Synth 8-6157] synthesizing module 'S6' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:411]
-INFO: [Synth 8-6155] done synthesizing module 'S6' (7#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:411]
-INFO: [Synth 8-6157] synthesizing module 'S7' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:493]
-INFO: [Synth 8-6155] done synthesizing module 'S7' (8#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:493]
-INFO: [Synth 8-6157] synthesizing module 'S8' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:575]
-INFO: [Synth 8-6155] done synthesizing module 'S8' (9#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v:575]
-INFO: [Synth 8-6155] done synthesizing module 'SBoxes' (10#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBoxes.v:3]
-INFO: [Synth 8-6157] synthesizing module 'StraightDBoxTable' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:183]
-INFO: [Synth 8-6155] done synthesizing module 'StraightDBoxTable' (11#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:183]
-INFO: [Synth 8-6155] done synthesizing module 'FFunction' (12#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/FFunction.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'Round' (13#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Round.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Register' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Register.v:3]
-	Parameter width bound to: 64 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Register' (14#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Register.v:3]
-INFO: [Synth 8-6157] synthesizing module 'KeyGeneration' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneration.v:1]
-INFO: [Synth 8-6157] synthesizing module 'ParityBitDropTable' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:217]
-INFO: [Synth 8-6155] done synthesizing module 'ParityBitDropTable' (15#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:217]
-INFO: [Synth 8-6157] synthesizing module 'KeyRound' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyRound.v:3]
-	Parameter shiftn bound to: 1 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'KeyCompressionTable' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:275]
-INFO: [Synth 8-6155] done synthesizing module 'KeyCompressionTable' (16#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:275]
-INFO: [Synth 8-6155] done synthesizing module 'KeyRound' (17#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyRound.v:3]
-INFO: [Synth 8-6157] synthesizing module 'KeyRound__parameterized0' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyRound.v:3]
-	Parameter shiftn bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'KeyRound__parameterized0' (17#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyRound.v:3]
-WARNING: [Synth 8-350] instance 'KR16' of module 'KeyRound' requires 5 connections, but only 3 given [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneration.v:142]
-INFO: [Synth 8-6155] done synthesizing module 'KeyGeneration' (18#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneration.v:1]
-INFO: [Synth 8-6157] synthesizing module 'InitialPermutation' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'InitialPermutation' (19#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:1]
-INFO: [Synth 8-6157] synthesizing module 'FinalPermutation' [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:67]
-INFO: [Synth 8-6155] done synthesizing module 'FinalPermutation' (20#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v:67]
-WARNING: [Synth 8-3848] Net clk in module/entity PipelinedRounds does not have driver. [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:38]
-WARNING: [Synth 8-3848] Net reset in module/entity PipelinedRounds does not have driver. [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:39]
-INFO: [Synth 8-6155] done synthesizing module 'PipelinedRounds' (21#1) [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:2]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[8]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[17]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[21]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[24]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[34]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[37]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[42]
-WARNING: [Synth 8-3331] design KeyCompressionTable has unconnected port dataIn[53]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[7]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[15]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[23]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[31]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[39]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[47]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[55]
-WARNING: [Synth 8-3331] design ParityBitDropTable has unconnected port dataIn[63]
----------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 992.445 ; gain = 136.988
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
-WARNING: [Synth 8-3295] tying undriven pin REG1:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:37]
-WARNING: [Synth 8-3295] tying undriven pin REG1:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:37]
-WARNING: [Synth 8-3295] tying undriven pin REG2:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:50]
-WARNING: [Synth 8-3295] tying undriven pin REG2:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:50]
-WARNING: [Synth 8-3295] tying undriven pin REG3:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:63]
-WARNING: [Synth 8-3295] tying undriven pin REG3:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:63]
-WARNING: [Synth 8-3295] tying undriven pin REG4:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:76]
-WARNING: [Synth 8-3295] tying undriven pin REG4:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:76]
-WARNING: [Synth 8-3295] tying undriven pin REG5:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:89]
-WARNING: [Synth 8-3295] tying undriven pin REG5:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:89]
-WARNING: [Synth 8-3295] tying undriven pin REG6:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:102]
-WARNING: [Synth 8-3295] tying undriven pin REG6:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:102]
-WARNING: [Synth 8-3295] tying undriven pin REG7:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:115]
-WARNING: [Synth 8-3295] tying undriven pin REG7:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:115]
-WARNING: [Synth 8-3295] tying undriven pin REG8:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:128]
-WARNING: [Synth 8-3295] tying undriven pin REG8:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:128]
-WARNING: [Synth 8-3295] tying undriven pin REG9:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:141]
-WARNING: [Synth 8-3295] tying undriven pin REG9:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:141]
-WARNING: [Synth 8-3295] tying undriven pin REG10:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:154]
-WARNING: [Synth 8-3295] tying undriven pin REG10:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:154]
-WARNING: [Synth 8-3295] tying undriven pin REG11:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:167]
-WARNING: [Synth 8-3295] tying undriven pin REG11:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:167]
-WARNING: [Synth 8-3295] tying undriven pin REG12:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:180]
-WARNING: [Synth 8-3295] tying undriven pin REG12:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:180]
-WARNING: [Synth 8-3295] tying undriven pin REG13:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:193]
-WARNING: [Synth 8-3295] tying undriven pin REG13:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:193]
-WARNING: [Synth 8-3295] tying undriven pin REG14:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:206]
-WARNING: [Synth 8-3295] tying undriven pin REG14:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:206]
-WARNING: [Synth 8-3295] tying undriven pin REG15:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:219]
-WARNING: [Synth 8-3295] tying undriven pin REG15:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:219]
-WARNING: [Synth 8-3295] tying undriven pin REG16:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:232]
-WARNING: [Synth 8-3295] tying undriven pin REG16:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:232]
-WARNING: [Synth 8-3295] tying undriven pin InitReg:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:255]
-WARNING: [Synth 8-3295] tying undriven pin InitReg:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:255]
-WARNING: [Synth 8-3295] tying undriven pin FinalReg:clk to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:261]
-WARNING: [Synth 8-3295] tying undriven pin FinalReg:reset to constant 0 [D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v:261]
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 992.445 ; gain = 136.988
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 992.445 ; gain = 136.988
----------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a35tcpg236-1
-INFO: [Project 1-570] Preparing netlist for logic optimization
-
-Processing XDC Constraints
-Initializing timing engine
-Completed Processing XDC Constraints
-
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
-
-RTL Elaboration Complete:  : Time (s): cpu = 00:00:38 ; elapsed = 00:00:32 . Memory (MB): peak = 1326.965 ; gain = 471.508
-48 Infos, 55 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:33 . Memory (MB): peak = 1327.117 ; gain = 471.660
-add_files -norecurse {{D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneratorTestBench.v}}
-update_compile_order -fileset sources_1
-set_property top KeyGeneratorTestBench [current_fileset]
-update_compile_order -fileset sources_1
-close_design
 launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'RoundTesting' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj RoundTesting_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/FFunction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module FFunction
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InitialPermutation
-INFO: [VRFC 10-311] analyzing module FinalPermutation
-INFO: [VRFC 10-311] analyzing module ExpansionDBoxTable
-INFO: [VRFC 10-311] analyzing module StraightDBoxTable
-INFO: [VRFC 10-311] analyzing module ParityBitDropTable
-INFO: [VRFC 10-311] analyzing module KeyCompressionTable
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Round.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Round
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module S1
-INFO: [VRFC 10-311] analyzing module S2
-INFO: [VRFC 10-311] analyzing module S3
-INFO: [VRFC 10-311] analyzing module S4
-INFO: [VRFC 10-311] analyzing module S5
-INFO: [VRFC 10-311] analyzing module S6
-INFO: [VRFC 10-311] analyzing module S7
-INFO: [VRFC 10-311] analyzing module S8
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBoxes.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module SBoxes
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sim_1/new/RoundTesting.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RoundTesting
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.1
-Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RoundTesting_behav xil_defaultlib.RoundTesting xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ExpansionDBoxTable
-Compiling module xil_defaultlib.S1
-Compiling module xil_defaultlib.S2
-Compiling module xil_defaultlib.S3
-Compiling module xil_defaultlib.S4
-Compiling module xil_defaultlib.S5
-Compiling module xil_defaultlib.S6
-Compiling module xil_defaultlib.S7
-Compiling module xil_defaultlib.S8
-Compiling module xil_defaultlib.SBoxes
-Compiling module xil_defaultlib.StraightDBoxTable
-Compiling module xil_defaultlib.FFunction
-Compiling module xil_defaultlib.Round
-Compiling module xil_defaultlib.RoundTesting
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot RoundTesting_behav
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:10 . Memory (MB): peak = 1335.934 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "RoundTesting_behav -key {Behavioral:sim_1:Functional:RoundTesting} -tclbatch {RoundTesting.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.1
-Time resolution is 1 ps
-source RoundTesting.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'RoundTesting_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:20 . Memory (MB): peak = 1335.934 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'RoundTesting' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj RoundTesting_vlog.prj"
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.1
-Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RoundTesting_behav xil_defaultlib.RoundTesting xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
-INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "RoundTesting_behav -key {Behavioral:sim_1:Functional:RoundTesting} -tclbatch {RoundTesting.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.1
-Time resolution is 1 ps
-source RoundTesting.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [Common 17-41] Interrupt caught. Command should exit soon.
-INFO: [Common 17-344] 'run' was cancelled
-INFO: [Common 17-344] 'source' was cancelled
-INFO: [Common 17-344] 'xsim' was cancelled
-INFO: [Vivado 12-5357] 'simulate' step aborted
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1344.281 ; gain = 0.000
-INFO: [Common 17-344] 'launch_simulation' was cancelled
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-reset_simulation -simset sim_1 -mode behavioral
-INFO: [Vivado 12-2266] Removing simulation data...
-INFO: [Vivado 12-2267] Reset complete
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'RoundTesting' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj RoundTesting_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/FFunction.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module FFunction
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module InitialPermutation
-INFO: [VRFC 10-311] analyzing module FinalPermutation
-INFO: [VRFC 10-311] analyzing module ExpansionDBoxTable
-INFO: [VRFC 10-311] analyzing module StraightDBoxTable
-INFO: [VRFC 10-311] analyzing module ParityBitDropTable
-INFO: [VRFC 10-311] analyzing module KeyCompressionTable
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Round.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Round
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBox.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module S1
-INFO: [VRFC 10-311] analyzing module S2
-INFO: [VRFC 10-311] analyzing module S3
-INFO: [VRFC 10-311] analyzing module S4
-INFO: [VRFC 10-311] analyzing module S5
-INFO: [VRFC 10-311] analyzing module S6
-INFO: [VRFC 10-311] analyzing module S7
-INFO: [VRFC 10-311] analyzing module S8
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/SBoxes.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module SBoxes
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sim_1/new/RoundTesting.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module RoundTesting
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
-INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.1
-Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot RoundTesting_behav xil_defaultlib.RoundTesting xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ExpansionDBoxTable
-Compiling module xil_defaultlib.S1
-Compiling module xil_defaultlib.S2
-Compiling module xil_defaultlib.S3
-Compiling module xil_defaultlib.S4
-Compiling module xil_defaultlib.S5
-Compiling module xil_defaultlib.S6
-Compiling module xil_defaultlib.S7
-Compiling module xil_defaultlib.S8
-Compiling module xil_defaultlib.SBoxes
-Compiling module xil_defaultlib.StraightDBoxTable
-Compiling module xil_defaultlib.FFunction
-Compiling module xil_defaultlib.Round
-Compiling module xil_defaultlib.RoundTesting
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot RoundTesting_behav
-
-****** Webtalk v2018.1 (64-bit)
-  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
-  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-source D:/Official/College/Eng -notrace
-couldn't read file "D:/Official/College/Eng": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Wed Apr 10 21:32:42 2019...
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "RoundTesting_behav -key {Behavioral:sim_1:Functional:RoundTesting} -tclbatch {RoundTesting.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.1
-Time resolution is 1 ps
-source RoundTesting.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'RoundTesting_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1344.656 ; gain = 0.375
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-move_files -fileset sim_1 [get_files  {{D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneratorTestBench.v}}]
-update_compile_order -fileset sources_1
-update_compile_order -fileset sim_1
-set_property top KeyGeneratorTestBench [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-54] Inspecting design source files for 'KeyGeneratorTestBench' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-"xvlog --incr --relax -prj KeyGeneratorTestBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneration.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module KeyGeneration
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyRound.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module KeyRound
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneratorTestBench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module KeyGeneratorTestBench
-INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-Vivado Simulator 2018.1
-Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot KeyGeneratorTestBench_behav xil_defaultlib.KeyGeneratorTestBench xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneration.v" Line 1. Module KeyGeneration doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ParityBitDropTable
-Compiling module xil_defaultlib.KeyCompressionTable
-Compiling module xil_defaultlib.KeyRound
-Compiling module xil_defaultlib.KeyRound(shiftn=2)
-Compiling module xil_defaultlib.KeyGeneration
-Compiling module xil_defaultlib.KeyGeneratorTestBench
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot KeyGeneratorTestBench_behav
-
-****** Webtalk v2018.1 (64-bit)
-  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
-  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-source D:/Official/College/Eng -notrace
-couldn't read file "D:/Official/College/Eng": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Wed Apr 10 21:33:29 2019...
-INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "KeyGeneratorTestBench_behav -key {Behavioral:sim_1:Functional:KeyGeneratorTestBench} -tclbatch {KeyGeneratorTestBench.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Vivado Simulator 2018.1
-Time resolution is 1 ps
-source KeyGeneratorTestBench.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'KeyGeneratorTestBench_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1350.105 ; gain = 0.000
-update_compile_order -fileset sources_1
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open {D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v} w ]
-add_files -fileset sim_1 {{D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v}}
-update_compile_order -fileset sim_1
-set_property top PipelinedRoundsTestBench [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-update_compile_order -fileset sim_1
-launch_simulation
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-54] Inspecting design source files for 'PipelinedRoundsTestBench' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj PipelinedRoundsTestBench_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/FFunction.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FFunction
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneration.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeyGeneration
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/KeyRound.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module KeyRound
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/Permuter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module InitialPermutation
+INFO: [VRFC 10-311] analyzing module FinalPermutation
+INFO: [VRFC 10-311] analyzing module ExpansionDBoxTable
+INFO: [VRFC 10-311] analyzing module StraightDBoxTable
+INFO: [VRFC 10-311] analyzing module ParityBitDropTable
+INFO: [VRFC 10-311] analyzing module KeyCompressionTable
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/PipelinedRounds.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module PipelinedRounds
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/Register.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Register
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/Round.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Round
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/SBox.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module S1
+INFO: [VRFC 10-311] analyzing module S2
+INFO: [VRFC 10-311] analyzing module S3
+INFO: [VRFC 10-311] analyzing module S4
+INFO: [VRFC 10-311] analyzing module S5
+INFO: [VRFC 10-311] analyzing module S6
+INFO: [VRFC 10-311] analyzing module S7
+INFO: [VRFC 10-311] analyzing module S8
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sources_1/new/SBoxes.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SBoxes
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module PipelinedRoundsTestBench
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
 INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 Vivado Simulator 2018.1
 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
 Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot PipelinedRoundsTestBench_behav xil_defaultlib.PipelinedRoundsTestBench xil_defaultlib.glbl -log elaborate.log 
@@ -518,7 +73,6 @@ Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sources_1/new/KeyGeneration.v" Line 1. Module KeyGeneration doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.ExpansionDBoxTable
@@ -546,24 +100,15 @@ Compiling module xil_defaultlib.PipelinedRounds
 Compiling module xil_defaultlib.PipelinedRoundsTestBench
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot PipelinedRoundsTestBench_behav
-
-****** Webtalk v2018.1 (64-bit)
-  **** SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
-  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
-
-source D:/Official/College/Eng -notrace
-couldn't read file "D:/Official/College/Eng": no such file or directory
-INFO: [Common 17-206] Exiting Webtalk at Wed Apr 10 21:43:15 2019...
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1358.383 ; gain = 0.000
 INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
-   with args "PipelinedRoundsTestBench_behav -key {Behavioral:sim_1:Functional:PipelinedRoundsTestBench} -tclbatch {PipelinedRoundsTestBench.tcl} -log {simulate.log}"
+   with args "PipelinedRoundsTestBench_behav -key {Behavioral:sim_1:Functional:PipelinedRoundsTestBench} -tclbatch {PipelinedRoundsTestBench.tcl} -view {D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
 Vivado Simulator 2018.1
 Time resolution is 1 ps
+open_wave_config D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg
 source PipelinedRoundsTestBench.tcl
 # set curr_wave [current_wave_config]
 # if { [string length $curr_wave] == 0 } {
@@ -575,29 +120,24 @@ source PipelinedRoundsTestBench.tcl
 #   }
 # }
 # run 1000ns
-$finish called at time : 210 ns : File "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v" Line 23
+$finish called at time : 210 ns : File "D:/Programming/Github/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v" Line 25
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'PipelinedRoundsTestBench_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 1358.383 ; gain = 0.000
-current_wave_config {Untitled 5}
-Untitled 5
-add_wave {{/PipelinedRoundsTestBench/PR/REG1/dataOut}} 
-save_wave_config {D:/Official/College/Eng 2019/EE460/project/DES-AO/PipelinedRoundsTestBench_behav.wcfg}
-add_files -fileset sim_1 -norecurse {{D:/Official/College/Eng 2019/EE460/project/DES-AO/PipelinedRoundsTestBench_behav.wcfg}}
-set_property xsim.view {{D:/Official/College/Eng 2019/EE460/project/DES-AO/PipelinedRoundsTestBench_behav.wcfg}} [get_filesets sim_1]
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:10 . Memory (MB): peak = 873.090 ; gain = 29.250
+save_wave_config {D:/Programming/Github/DES-AO/PipelinedRoundsTestBench_behav.wcfg}
 relaunch_sim
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [SIM-utils-54] Inspecting design source files for 'PipelinedRoundsTestBench' in fileset 'sim_1'...
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -prj PipelinedRoundsTestBench_vlog.prj"
 INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim'
 Vivado Simulator 2018.1
 Copyright 1986-1999, 2001-2017 Xilinx, Inc. All Rights Reserved.
 Running: D:/Xilinx/Vivado/2018.1/bin/unwrapped/win64.o/xelab.exe -wto d40fa46dfa0b4af8adb2cf2e7bc035b0 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot PipelinedRoundsTestBench_behav xil_defaultlib.PipelinedRoundsTestBench xil_defaultlib.glbl -log elaborate.log 
@@ -608,12 +148,4 @@ INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to
 INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
 Vivado Simulator 2018.1
 Time resolution is 1 ps
-$finish called at time : 210 ns : File "D:/Official/College/Eng 2019/EE460/project/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v" Line 23
-relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 1369.469 ; gain = 0.000
-save_wave_config {D:/Official/College/Eng 2019/EE460/project/DES-AO/PipelinedRoundsTestBench_behav.wcfg}
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
-exit
-INFO: [Common 17-206] Exiting Vivado at Wed Apr 10 21:51:07 2019...
+$finish called at time : 210 ns : File "D:/Programming/Github/DES-AO/DES_AO.srcs/sim_1/new/PipelinedRoundsTestBench.v" Line 25

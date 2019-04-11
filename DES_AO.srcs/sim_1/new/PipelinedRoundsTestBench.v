@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module PipelinedRoundsTestBench;
-    reg clk, reset;
+    reg clk, reset, encrypt;
     reg [0:63] key, dataIn;
     wire [0:63] dataOut;
     PipelinedRounds PR(
@@ -9,12 +9,14 @@ module PipelinedRoundsTestBench;
     .reset(reset),
     .key(key),
     .dataIn(dataIn),
-    .dataOut(dataOut)
+    .dataOut(dataOut),
+    .encrypt(encrypt)
     );
     always #5 clk = ~clk;
     initial begin
     reset = 1;
     clk = 0;
+    encrypt = 1;
     dataIn = 64'h123456ABCD132536;
     key = 64'hAABB09182736CCDD;
     @(negedge clk);
