@@ -17,7 +17,7 @@ module TripleDES(
         .reset(reset),
         .dataIn(dataIn),
         .encrypt(encrypt),
-        .key(key1),
+        .key(ck1),
         .dataOut(DES1Out)
     );
     DES DES2(
@@ -25,7 +25,7 @@ module TripleDES(
         .reset(reset),
         .dataIn(DES1Out),
         .encrypt(decrypt),
-        .key(key2),
+        .key(ck2),
         .dataOut(DES2Out)
     );
     DES DES3(
@@ -33,7 +33,19 @@ module TripleDES(
         .reset(reset),
         .dataIn(DES2Out),
         .encrypt(encrypt),
-        .key(key3),
+        .key(ck3),
         .dataOut(dataOut)
     );
+    always @(*) begin
+        if(encrypt) begin
+            ck1 = key1;
+            ck2 = key2;
+            ck3 = key3;
+        end
+        else begin
+            ck1 = key3;
+            ck2 = key2;
+            ck3 = key1;
+        end
+    end
 endmodule

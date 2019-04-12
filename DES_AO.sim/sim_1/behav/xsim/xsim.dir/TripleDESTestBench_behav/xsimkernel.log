@@ -1,0 +1,4 @@
+Running: xsim.dir/TripleDESTestBench_behav/xsimk.exe -simmode gui -wdb TripleDESTestBench_behav.wdb -simrunnum 0 -socket 52311
+Design successfully loaded
+Design Loading Memory Usage: 7668 KB (Peak: 7668 KB)
+Design Loading CPU Usage: 30 ms
