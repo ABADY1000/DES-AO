@@ -1,8 +1,8 @@
 module UARTRecieverTestBench;
 
 parameter frequency = 100_000_000;
-parameter reciverBaudRate = 9_600;
-parameter senderBaudRate = 10_000;
+parameter reciverBaudRate = 20_000;
+parameter senderBaudRate = 20_500;
 parameter baudClockCount = frequency/(senderBaudRate);
 
 reg clk, reset, rx;
@@ -10,7 +10,7 @@ reg stop;
 wire packetRecievedSignal;
 wire [0:7] data;
 
-UARTReciever #(.clockFrequency(frequency),.baudRate(reciverBaudRate),.samplingRate(16))UT (
+UARTReciever #(.clockFrequency(frequency),.baudRate(reciverBaudRate),.samplingRate(10))UT (
 .clk(clk),
 .reset(reset),
 .rx(rx),

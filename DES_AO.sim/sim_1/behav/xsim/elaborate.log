@@ -8,7 +8,7 @@ Starting simulation data flow analysis
 WARNING: [XSIM 43-4100] "D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.UARTReciever(samplingRate=16)
+Compiling module xil_defaultlib.UARTReciever(baudRate=20000,samp...
 Compiling module xil_defaultlib.UARTRecieverTestBench
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot UARTRecieverTestBench_behav

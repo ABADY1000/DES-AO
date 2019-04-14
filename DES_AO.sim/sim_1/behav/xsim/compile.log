@@ -2,5 +2,3 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO
 INFO: [VRFC 10-311] analyzing module UARTReciever
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.srcs/sim_1/new/UARTRecieverTestBench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module UARTRecieverTestBench
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

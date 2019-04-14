@@ -1,13 +1,17 @@
 module UARTReciever #(
-    clockFrequency=100_000_000,
-    baudRate=9600,
-    samplingRate=8 // If you want rates higher than 16 then you need to increase the size of the sampling counter
+    clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter
+    baudRate=9600, // Changing this may require changing the size of reg clockCounter
+    samplingRate=8 // Changing this may require changing the size of reg samplingCounter
     )(
     input clk,
     input reset,
     input rx,
+    // To store full packet
     output reg [0:7] data,
-    output reg packetRecievedSignal
+    // Positive edge indicates that a new packet has been fully copied to data
+    // Negative edge indicates that a new packet has just started being read
+    // Read packet at positive edge or while the signal is high
+    output reg packetRecievedSignal 
     );
     localparam waitingStartBit = 2'b00;
     localparam readingStartBit = 2'b01;
@@ -22,7 +26,6 @@ module UARTReciever #(
     reg [0:3] samplingCounter;
     reg [0:2] bitCounter;
     reg [0:1] state;
-    
     always @(posedge clk) begin
         if(reset) begin
             //Reset all internal registers;
@@ -39,6 +42,7 @@ module UARTReciever #(
                 waitingStartBit: begin
                     // Wait for rx to be low then start reading
                     if(~rx) begin
+                        packetRecievedSignal <= 1'b0;
                         state <= readingStartBit;
                         clockCounter <= 0;
                     end
@@ -67,7 +71,6 @@ module UARTReciever #(
                                 // Cannot transition to initial state directly
                                 // Because we might be in the middle of a low bit
                                 state <= waitingStopBit;
-                                packetRecievedSignal <= 1'b1;
                             end
                         end
                     end
@@ -76,8 +79,8 @@ module UARTReciever #(
                     // If rx is high that means we are either at the last high bit
                     // Or we are at the stopping bit, either way we can transition
                     // Directly to the initial state
+                    packetRecievedSignal <= 1'b1;
                     if(rx) begin
-                        packetRecievedSignal <= 1'b0;
                         state <= waitingStartBit;
                     end
                 end
