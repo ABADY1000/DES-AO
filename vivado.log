@@ -1432,3 +1432,7 @@ INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
 Vivado Simulator 2018.1
 Time resolution is 1 ps
 $finish called at time : 1130 ns : File "D:/Programming/Github/DES-AO/DES_AO.srcs/sim_1/new/TripleDESTestBench.v" Line 48
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 12 17:15:51 2019...

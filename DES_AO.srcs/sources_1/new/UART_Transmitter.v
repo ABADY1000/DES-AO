@@ -40,13 +40,12 @@ begin
                   counter <=0; // reset couter to 0
             	  if (load) rightshiftreg <= {1'b1,data,1'b0}; //load the data if load is asserted
 		          if (clear) bitcounter <=0; // reset the bitcounter if clear is asserted
-                  if (shift) 
-                     begin // if shift is asserted
+                  if (shift) begin // if shift is asserted
                         rightshiftreg <= rightshiftreg >> 1; //right shift the data as we transmit the data from lsb
                         bitcounter <= bitcounter + 1; //count the bitcounter
-                     end
-               end
-         end
+                  end
+           end
+     end
 end 
 
 //state machine

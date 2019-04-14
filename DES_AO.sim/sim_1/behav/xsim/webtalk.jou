@@ -2,11 +2,11 @@
 # Webtalk v2018.1 (64-bit)
 # SW Build 2188600 on Wed Apr  4 18:40:38 MDT 2018
 # IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
-# Start of session at: Fri Apr 12 16:55:13 2019
-# Process ID: 10672
+# Start of session at: Mon Apr 15 00:27:19 2019
+# Process ID: 17904
 # Current directory: D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/xsim.dir/TripleDESTestBench_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/xsim.dir/UARTRecieverTestBench_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/xsim.dir/TripleDESTestBench_behav/webtalk/xsim_webtalk.tcl -notrace
+source D:/Programming/Github/DES-AO/DES_AO.sim/sim_1/behav/xsim/xsim.dir/UARTRecieverTestBench_behav/webtalk/xsim_webtalk.tcl -notrace

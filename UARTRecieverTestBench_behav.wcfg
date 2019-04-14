@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="UARTRecieverTestBench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="UARTRecieverTestBench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="5725548994000fs"></ZoomStartTime>
+      <ZoomEndTime time="9545548994001fs"></ZoomEndTime>
+      <Cursor1Time time="7215548994000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="231"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="34" />
+   <wvobject type="divider" fp_name="divider572">
+      <obj_property name="label">TestBench</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/rx" type="logic">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/packetRecievedSignal" type="logic">
+      <obj_property name="ElementShortName">packetRecievedSignal</obj_property>
+      <obj_property name="ObjectShortName">packetRecievedSignal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/data" type="array">
+      <obj_property name="ElementShortName">data[0:7]</obj_property>
+      <obj_property name="ObjectShortName">data[0:7]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/baudRateCounter" type="array">
+      <obj_property name="ElementShortName">baudRateCounter[0:14]</obj_property>
+      <obj_property name="ObjectShortName">baudRateCounter[0:14]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/baudClk" type="logic">
+      <obj_property name="ElementShortName">baudClk</obj_property>
+      <obj_property name="ObjectShortName">baudClk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/frequency" type="array">
+      <obj_property name="ElementShortName">frequency[31:0]</obj_property>
+      <obj_property name="ObjectShortName">frequency[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/reciverBaudRate" type="array">
+      <obj_property name="ElementShortName">reciverBaudRate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reciverBaudRate[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/senderBaudRate" type="array">
+      <obj_property name="ElementShortName">senderBaudRate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">senderBaudRate[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/baudClockCount" type="array">
+      <obj_property name="ElementShortName">baudClockCount[31:0]</obj_property>
+      <obj_property name="ObjectShortName">baudClockCount[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider571">
+      <obj_property name="label">Module</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/stop" type="logic">
+      <obj_property name="ElementShortName">stop</obj_property>
+      <obj_property name="ObjectShortName">stop</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/rx" type="logic">
+      <obj_property name="ElementShortName">rx</obj_property>
+      <obj_property name="ObjectShortName">rx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/data" type="array">
+      <obj_property name="ElementShortName">data[0:7]</obj_property>
+      <obj_property name="ObjectShortName">data[0:7]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/packetRecievedSignal" type="logic">
+      <obj_property name="ElementShortName">packetRecievedSignal</obj_property>
+      <obj_property name="ObjectShortName">packetRecievedSignal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/count" type="logic">
+      <obj_property name="ElementShortName">count</obj_property>
+      <obj_property name="ObjectShortName">count</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/clockCounter" type="array">
+      <obj_property name="ElementShortName">clockCounter[0:14]</obj_property>
+      <obj_property name="ObjectShortName">clockCounter[0:14]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/samplingCounter" type="array">
+      <obj_property name="ElementShortName">samplingCounter[0:3]</obj_property>
+      <obj_property name="ObjectShortName">samplingCounter[0:3]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/bitCounter" type="array">
+      <obj_property name="ElementShortName">bitCounter[0:2]</obj_property>
+      <obj_property name="ObjectShortName">bitCounter[0:2]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/state" type="array">
+      <obj_property name="ElementShortName">state[0:1]</obj_property>
+      <obj_property name="ObjectShortName">state[0:1]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/clockFrequency" type="array">
+      <obj_property name="ElementShortName">clockFrequency[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clockFrequency[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/baudRate" type="array">
+      <obj_property name="ElementShortName">baudRate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">baudRate[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/samplingRate" type="array">
+      <obj_property name="ElementShortName">samplingRate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">samplingRate[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/waitingStartBit" type="array">
+      <obj_property name="ElementShortName">waitingStartBit[1:0]</obj_property>
+      <obj_property name="ObjectShortName">waitingStartBit[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/readingStartBit" type="array">
+      <obj_property name="ElementShortName">readingStartBit[1:0]</obj_property>
+      <obj_property name="ObjectShortName">readingStartBit[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/readingPacket" type="array">
+      <obj_property name="ElementShortName">readingPacket[1:0]</obj_property>
+      <obj_property name="ObjectShortName">readingPacket[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/waitingStopBit" type="array">
+      <obj_property name="ElementShortName">waitingStopBit[1:0]</obj_property>
+      <obj_property name="ObjectShortName">waitingStopBit[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/baudClockCount" type="array">
+      <obj_property name="ElementShortName">baudClockCount[31:0]</obj_property>
+      <obj_property name="ObjectShortName">baudClockCount[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/samplingClockCount" type="array">
+      <obj_property name="ElementShortName">samplingClockCount[31:0]</obj_property>
+      <obj_property name="ObjectShortName">samplingClockCount[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/halfSamplingRate" type="array">
+      <obj_property name="ElementShortName">halfSamplingRate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">halfSamplingRate[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -107,3 +107,4 @@ source TripleDESTestBench.tcl
 relaunch_sim
 open_wave_config {D:/Programming/Github/DES-AO/TripleDESTestBench_behav.wcfg}
 relaunch_sim
+close_sim

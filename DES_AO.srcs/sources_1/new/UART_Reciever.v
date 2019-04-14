@@ -30,7 +30,7 @@ parameter div_counter = clk_freq/(baud_rate*div_sample);  // this is the number 
 parameter mid_sample = (div_sample/2);  // this is the middle point of a bit where you want to sample it
 parameter div_bit = 10; // 1 start, 8 data, 1 stop
 
-
+wire baudSampleClk = counter == div_counter-1;
 assign RxData = rxshiftreg [8:1]; // assign the RxData from the shiftregister
 
 //UART receiver logic
@@ -49,7 +49,10 @@ always @ (posedge clk)
                 if (shift)rxshiftreg <= {RxD,rxshiftreg[9:1]}; //if shift asserted, load the receiving data
                 if (clear_samplecounter) samplecounter <=0; // if clear sampl counter asserted, reset sample counter
                 if (inc_samplecounter) samplecounter <= samplecounter +1; //if increment counter asserted, start sample count
-                if (clear_bitcounter) bitcounter <=0; // if clear bit counter asserted, reset bit counter
+                if (clear_bitcounter) begin
+                bitcounter <=0; // if clear bit counter asserted, reset bit counter
+                packetRecievedSignal <= 1'b1; // Indicate that a full packet is sent
+                end
                 if (inc_bitcounter)bitcounter <= bitcounter +1; // if increment bit counter asserted, start count bit counter
             end
         end
@@ -67,7 +70,6 @@ begin
     nextstate <=0; // set next state to be idle state
     case (state)
         0: begin // idle state
-            packetRecievedSignal <= 1'b0; // Reset packet signal
             if (RxD) // if input RxD data line asserted
               begin
               nextstate <=0; // back to idle state because RxD needs to be low to start transmission    
@@ -79,11 +81,11 @@ begin
             end
         end
         1: begin // receiving state
+            packetRecievedSignal <= 1'b0; // Reset packet signal
             nextstate <= 1; // DEFAULT 
             if (samplecounter== mid_sample - 1) shift <= 1; // if sample counter is 1, trigger shift 
                 if (samplecounter== div_sample - 1) begin // if sample counter is 3 as the sample rate used is 3
                     if (bitcounter == div_bit - 1) begin // check if bit counter if 9 or not
-                        packetRecievedSignal <= 1'b1; // Indicate that a full packet is sent
                         nextstate <= 0; // back to idle state if bit counter is 9 as receving is complete
                     end 
                 inc_bitcounter <=1; // trigger the increment bit counter if bit counter is not 9
