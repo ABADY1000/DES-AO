@@ -1,4 +1,0 @@
-Running: xsim.dir/UARTRecieverTestBench_behav/xsimk.exe -simmode gui -wdb UARTRecieverTestBench_behav.wdb -simrunnum 0 -socket 50605
-Design successfully loaded
-Design Loading Memory Usage: 4964 KB (Peak: 4964 KB)
-Design Loading CPU Usage: 0 ms
