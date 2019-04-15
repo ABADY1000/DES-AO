@@ -34,7 +34,7 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="basys3"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="269"/>
+    <Option Name="WTXSimLaunchSim" Val="279"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -58,7 +58,7 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/UARTReciever.v">
+      <File Path="$PSRCDIR/sources_1/new/UARTTransmitter.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -145,6 +145,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/UARTReciever.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/Interface.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -171,7 +179,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="UARTReciever"/>
+        <Option Name="TopModule" Val="UARTTransmitter"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -179,33 +187,38 @@
       <File Path="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Basys-3-Master.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../Xilinx/digilent-xdc-master/Basys-3-Master.xdc"/>
-          <Attr Name="ImportTime" Val="1555318974"/>
+          <Attr Name="ImportTime" Val="1555340972"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Basys-3-Master_UARTReceiver.xdc">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Basys-3-Master_UARTTransmitter.xdc">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
       <Config>
+        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/digilent-xdc-master/Basys-3-Master_UARTTransmitter.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/new/UARTRecieverTestBench.v">
+      <File Path="$PSRCDIR/sim_1/new/UARTTransmitterTestBench.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/InterfaceTestBench.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sim_1/new/TripleDESTestBench.v">
+      <File Path="$PSRCDIR/sim_1/new/RoundTestBench.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -221,7 +234,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sim_1/new/RoundTestBench.v">
+      <File Path="$PSRCDIR/sim_1/new/InterfaceTestBench.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -253,29 +266,60 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSIMDIR.wcfg/DESTestBench_behav.wcfg">
+      <File Path="$PSRCDIR/sim_1/new/TripleDESTestBench.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSIMDIR.wcfg/TripleDESTestBench_behav.wcfg">
+      <File Path="$PSRCDIR/sim_1/new/UARTRecieverTestBench.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSIMDIR.wcfg/InterfaceTestBench_behav.wcfg">
+      <File Path="$PSRCDIR/sim_1/imports/DES_AO.sim.wcfg/DESTestBench_behav.wcfg">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSIMDIR.wcfg/DESTestBench_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1555317611"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSIMDIR.wcfg/UARTRecieverTestBench_behav.wcfg">
+      <File Path="$PSRCDIR/sim_1/imports/DES_AO.sim.wcfg/TripleDESTestBench_behav.wcfg">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PSIMDIR.wcfg/TripleDESTestBench_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1555317612"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/imports/DES_AO.sim.wcfg/InterfaceTestBench_behav.wcfg">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSIMDIR.wcfg/InterfaceTestBench_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1555317612"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/imports/DES_AO.sim.wcfg/UARTRecieverTestBench_behav.wcfg">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSIMDIR.wcfg/UARTRecieverTestBench_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1555317612"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/imports/DES_AO.sim.wcfg/UARTTransmitterTestBench_behav.wcfg">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PSIMDIR.wcfg/UARTTransmitterTestBench_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1555340819"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="UARTRecieverTestBench"/>
+        <Option Name="TopModule" Val="UARTTransmitterTestBench"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
@@ -285,6 +329,7 @@
         <Option Name="XSimWcfgFile" Val="$PPRDIR/InterfaceTestBench_behav.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/UARTRecieverTestBench_behav.wcfg"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/UARTRecieverTestBench_behav.wcfg"/>
+        <Option Name="XSimWcfgFile" Val="$PSIMDIR.wcfg/UARTTransmitterTestBench_behav.wcfg"/>
         <Option Name="xsim.simulate.runtime" Val="1000ms"/>
       </Config>
     </FileSet>

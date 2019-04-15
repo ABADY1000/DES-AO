@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="UARTTransmitterTestBench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="UARTTransmitterTestBench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="4935000000001fs"></ZoomEndTime>
+      <Cursor1Time time="425634734000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="231"></NameColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject type="divider" fp_name="divider215">
+      <obj_property name="label">TestBench</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/transmit" type="logic">
+      <obj_property name="ElementShortName">transmit</obj_property>
+      <obj_property name="ObjectShortName">transmit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/message" type="array">
+      <obj_property name="ElementShortName">message[0:111]</obj_property>
+      <obj_property name="ObjectShortName">message[0:111]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/tx" type="logic">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/packetTransmittedSignal" type="logic">
+      <obj_property name="ElementShortName">packetTransmittedSignal</obj_property>
+      <obj_property name="ObjectShortName">packetTransmittedSignal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/messageLength" type="array">
+      <obj_property name="ElementShortName">messageLength[31:0]</obj_property>
+      <obj_property name="ObjectShortName">messageLength[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider216">
+      <obj_property name="label">Module</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/transmit" type="logic">
+      <obj_property name="ElementShortName">transmit</obj_property>
+      <obj_property name="ObjectShortName">transmit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/data" type="array">
+      <obj_property name="ElementShortName">data[0:7]</obj_property>
+      <obj_property name="ObjectShortName">data[0:7]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/data" type="array">
+      <obj_property name="ElementShortName">data[0:7]</obj_property>
+      <obj_property name="ObjectShortName">data[0:7]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/rightshiftreg" type="array">
+      <obj_property name="ElementShortName">rightshiftreg[0:9]</obj_property>
+      <obj_property name="ObjectShortName">rightshiftreg[0:9]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/tx" type="logic">
+      <obj_property name="ElementShortName">tx</obj_property>
+      <obj_property name="ObjectShortName">tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/packetTransmittedSignal" type="logic">
+      <obj_property name="ElementShortName">packetTransmittedSignal</obj_property>
+      <obj_property name="ObjectShortName">packetTransmittedSignal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/clockCounter" type="array">
+      <obj_property name="ElementShortName">clockCounter[0:14]</obj_property>
+      <obj_property name="ObjectShortName">clockCounter[0:14]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/bitCounter" type="array">
+      <obj_property name="ElementShortName">bitCounter[0:3]</obj_property>
+      <obj_property name="ObjectShortName">bitCounter[0:3]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/state" type="logic">
+      <obj_property name="ElementShortName">state</obj_property>
+      <obj_property name="ObjectShortName">state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/clockFrequency" type="array">
+      <obj_property name="ElementShortName">clockFrequency[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clockFrequency[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/baudRate" type="array">
+      <obj_property name="ElementShortName">baudRate[31:0]</obj_property>
+      <obj_property name="ObjectShortName">baudRate[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/waitingTransmitSignal" type="array">
+      <obj_property name="ElementShortName">waitingTransmitSignal[31:0]</obj_property>
+      <obj_property name="ObjectShortName">waitingTransmitSignal[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/sendingPacket" type="array">
+      <obj_property name="ElementShortName">sendingPacket[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sendingPacket[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/baudClockCount" type="array">
+      <obj_property name="ElementShortName">baudClockCount[31:0]</obj_property>
+      <obj_property name="ObjectShortName">baudClockCount[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

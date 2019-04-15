@@ -1,4 +1,4 @@
-module UARTReciever #(
+module UARTReceiver #(
     clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter
     baudRate=9600, // Changing this may require changing the size of reg clockCounter
     samplingRate=8 // Changing this may require changing the size of reg samplingCounter

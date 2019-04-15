@@ -10,7 +10,7 @@ reg stop;
 wire packetRecievedSignal;
 wire [0:7] data;
 
-UARTReciever #(.clockFrequency(frequency),.baudRate(reciverBaudRate),.samplingRate(10))UT (
+UARTReceiver #(.clockFrequency(frequency),.baudRate(reciverBaudRate),.samplingRate(10))UT (
 .clk(clk),
 .reset(reset),
 .rx(rx),
