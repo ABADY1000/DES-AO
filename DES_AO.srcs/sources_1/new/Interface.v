@@ -6,8 +6,7 @@ module Interface(
     input Rx,
     output Tx
 );
-parameter readingCommand = 3'b000; 
-parameter readingKey1 = 3'b001;
+parameter readingHead = 3'b001;
 parameter readingKey2 = 3'b010;
 parameter readingKey3 = 3'b011;
 parameter readingDataLength = 3'b100;

@@ -21,10 +21,13 @@ message = "We are m3lmeen";
 transmit = 1;
 @(negedge clk);
 reset = 0;
-repeat(messageLength) begin
+repeat(messageLength-1) begin
     @(posedge packetTransmittedSignal);
     message = {message[8:messageLength*8-1],8'd0};
 end
+transmit = 0;
+@(posedge packetTransmittedSignal);
+repeat(2000) @(posedge clk);
 $finish;
 end
 endmodule

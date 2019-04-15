@@ -7,6 +7,9 @@ module UARTTransmitter #(
     input transmit,
     input [0:7] data,
     output reg tx,
+    // Positive edge indicates that a new packet has been fully transmitted.
+    // Negative edge indicates that a new packet has been copied to internal buffer
+    // and has just started being transmitted.
     output reg packetTransmittedSignal
     );
     localparam waitingTransmitSignal = 0;
