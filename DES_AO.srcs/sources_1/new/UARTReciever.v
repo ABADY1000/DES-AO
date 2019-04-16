@@ -1,7 +1,7 @@
 module UARTReceiver #(
     clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter
     baudRate=9600, // Changing this may require changing the size of reg clockCounter
-    samplingRate=8 // Changing this may require changing the size of reg samplingCounter
+    samplingRate=8 // Changing this may require changing the size of reg samplingCounter and reg clockCounter
     )(
     input clk,
     input reset,
@@ -20,8 +20,8 @@ module UARTReceiver #(
     localparam samplingClockCount = baudClockCount / samplingRate;
     localparam halfSamplingRate = samplingRate / 2;
     
-    reg [0:14] clockCounter;
-    reg [0:3] samplingCounter;
+    reg [0:19] clockCounter;
+    reg [0:4] samplingCounter;
     reg [0:2] bitCounter;
     reg [0:1] state;
     reg didNotSendReceivedSignal;
@@ -60,7 +60,7 @@ module UARTReceiver #(
                         samplingCounter <= samplingCounter + 1;
                         if(samplingCounter == samplingRate-1) begin
                             samplingCounter <= 0;
-                            // Shift in the new rx
+                            // Shift right the new rx
                             data <= {rx,data[0:6]};
                             bitCounter <= bitCounter + 1;
                             // If by the time the always finishes

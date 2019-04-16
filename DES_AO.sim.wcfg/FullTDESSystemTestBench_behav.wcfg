@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="FullTDESSystemTestBench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="FullTDESSystemTestBench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="237380627557981fs"></ZoomEndTime>
+      <Cursor1Time time="19099590723000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="137"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="/FullTDESSystemTestBench/clkUserDevice" type="logic">
+      <obj_property name="ElementShortName">clkUserDevice</obj_property>
+      <obj_property name="ObjectShortName">clkUserDevice</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/resetUserDevice" type="logic">
+      <obj_property name="ElementShortName">resetUserDevice</obj_property>
+      <obj_property name="ObjectShortName">resetUserDevice</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/clkFPGA" type="logic">
+      <obj_property name="ElementShortName">clkFPGA</obj_property>
+      <obj_property name="ObjectShortName">clkFPGA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/resetFPGA" type="logic">
+      <obj_property name="ElementShortName">resetFPGA</obj_property>
+      <obj_property name="ObjectShortName">resetFPGA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/rxUserDevice" type="logic">
+      <obj_property name="ElementShortName">rxUserDevice</obj_property>
+      <obj_property name="ObjectShortName">rxUserDevice</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/txUserDevice" type="logic">
+      <obj_property name="ElementShortName">txUserDevice</obj_property>
+      <obj_property name="ObjectShortName">txUserDevice</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/rxFPGA" type="logic">
+      <obj_property name="ElementShortName">rxFPGA</obj_property>
+      <obj_property name="ObjectShortName">rxFPGA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/txFPGA" type="logic">
+      <obj_property name="ElementShortName">txFPGA</obj_property>
+      <obj_property name="ObjectShortName">txFPGA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/userDeviceState" type="logic">
+      <obj_property name="ElementShortName">userDeviceState</obj_property>
+      <obj_property name="ObjectShortName">userDeviceState</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/command" type="array">
+      <obj_property name="ElementShortName">command[0:7]</obj_property>
+      <obj_property name="ObjectShortName">command[0:7]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/dataLength" type="array">
+      <obj_property name="ElementShortName">dataLength[0:23]</obj_property>
+      <obj_property name="ObjectShortName">dataLength[0:23]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/key1" type="array">
+      <obj_property name="ElementShortName">key1[0:63]</obj_property>
+      <obj_property name="ObjectShortName">key1[0:63]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/key2" type="array">
+      <obj_property name="ElementShortName">key2[0:63]</obj_property>
+      <obj_property name="ObjectShortName">key2[0:63]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/key3" type="array">
+      <obj_property name="ElementShortName">key3[0:63]</obj_property>
+      <obj_property name="ObjectShortName">key3[0:63]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/text" type="array">
+      <obj_property name="ElementShortName">text[0:191]</obj_property>
+      <obj_property name="ObjectShortName">text[0:191]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/fullMessage" type="array">
+      <obj_property name="ElementShortName">fullMessage[0:415]</obj_property>
+      <obj_property name="ObjectShortName">fullMessage[0:415]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/cipherText" type="array">
+      <obj_property name="ElementShortName">cipherText[0:191]</obj_property>
+      <obj_property name="ObjectShortName">cipherText[0:191]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/clockFrequencyUserDevice" type="array">
+      <obj_property name="ElementShortName">clockFrequencyUserDevice[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clockFrequencyUserDevice[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/clockFrequencyFPGA" type="array">
+      <obj_property name="ElementShortName">clockFrequencyFPGA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clockFrequencyFPGA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/textSize" type="array">
+      <obj_property name="ElementShortName">textSize[31:0]</obj_property>
+      <obj_property name="ObjectShortName">textSize[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/baudRateUserDevice" type="array">
+      <obj_property name="ElementShortName">baudRateUserDevice[31:0]</obj_property>
+      <obj_property name="ObjectShortName">baudRateUserDevice[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/FullTDESSystemTestBench/baudRateFPGA" type="array">
+      <obj_property name="ElementShortName">baudRateFPGA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">baudRateFPGA[31:0]</obj_property>
+   </wvobject>
+</wave_config>

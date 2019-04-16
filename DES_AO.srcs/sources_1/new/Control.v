@@ -1,6 +1,7 @@
-module Control #(
-    clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter in this module and UART modules
-    baudRate=9600 // Changing this may require changing the size of reg clockCounter in this module and UART modules
+module FullTDESSystem #(
+    clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter UART modules
+    baudRate=9600, // Changing this may require changing the size of reg clockCounter in UART modules
+    samplingRate=8 // Changing this may require changing the size of reg samplingCounter in UARTReceiver module
     )(
     input clk,
     input reset,
@@ -36,7 +37,9 @@ module Control #(
     assign key3       = head[(dataLengthSize+keySize*2)*8:(dataLengthSize+keySize*3)*8-1];
     assign encrypt = command == "E";
 
-    reg [0:63] dataBlockIn, dataBlockOut;
+    reg [0:63] dataBlockIn;
+    wire [0:63] dataBlockOut;
+    reg [0:63] dataBlockOutBuffer;
     reg pipelineClk;
     
     TripleDES TDES(
@@ -49,11 +52,16 @@ module Control #(
         .encrypt(encrypt),
         .dataOut(dataBlockOut)
     );
+    
     //----------------- UART -------------------
     wire [0:7] receivedPacket;
     wire packetRecievedSignal;
     
-    UARTReceiver UR(
+    UARTReceiver #(
+        .clockFrequency(clockFrequency),
+        .baudRate(baudRate),
+        .samplingRate(samplingRate)
+        ) UR (
         .clk(clk),
         .reset(reset),
         .rx(rx),
@@ -64,7 +72,11 @@ module Control #(
     wire [0:7] transmitPacket = dataBlockOut[0:7];
     wire packetTransmittedSignal;
     wire transmit = state == receivingTransmittingData || state == transmittingData;
-    UARTTransmitter UT(
+    
+    UARTTransmitter #(
+        .clockFrequency(clockFrequency),
+        .baudRate(baudRate)
+        )UT(
         .clk(clk),
         .reset(reset),
         .transmit(transmit),
@@ -97,6 +109,7 @@ module Control #(
         end else begin
             // If we have received 8 packets (Pipeline Block)
             if(blockCounter == 8) begin
+                dataBlockOutBuffer <= dataBlockOut;
                 blockCounter <= 0;
             end
             // Below is the state where receiving has stopped and we have to transmit what is left in the pipeline
@@ -104,7 +117,7 @@ module Control #(
             if(state == transmittingData) begin
                 if(packetTransmittedSignal) begin
                     blockCounter <= blockCounter + 1;
-                    dataBlockOut <= {dataBlockOut[8:63],8'd0};
+                    dataBlockOutBuffer <= {dataBlockOutBuffer[8:63],8'd0};
                     if(pipelineClk) begin
                         pipelineCounter <= pipelineCounter - 1;
                         if(pipelineCounter == 1) begin
@@ -168,7 +181,7 @@ module Control #(
                             // Shift left
                             dataBlockIn <= {dataBlockIn[8:63],receivedPacket};
                             // Shift left
-                            dataBlockOut <= {dataBlockOut[8:63],8'd0};
+                            dataBlockOutBuffer <= {dataBlockOutBuffer[8:63],8'd0};
                             dataPacketsCounter <= dataPacketsCounter - 1;
                             if(dataPacketsCounter == 1) begin
                                 state <= transmittingData;

@@ -18,7 +18,7 @@ module UARTTransmitter #(
     localparam baudClockCount = clockFrequency / baudRate;
     
     reg [0:9] rightshiftreg;
-    reg [0:14] clockCounter;
+    reg [0:19] clockCounter;
     reg [0:3] bitCounter;
     reg state;
     reg didNotSendTransmittedSignal;
@@ -50,6 +50,7 @@ module UARTTransmitter #(
                 sendingPacket: begin
                     if(clockCounter == baudClockCount) begin
                         didNotSendTransmittedSignal = 1'b1;
+                        // Shift right
                         rightshiftreg <= {1'b0,rightshiftreg[0:8]};
                         bitCounter <= bitCounter + 1;
                         // If we are going to finish at the end of this always block
