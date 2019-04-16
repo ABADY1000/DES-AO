@@ -1,3 +1,4 @@
+// This module needs to be better organized maybe even split into smaller modules
 module FullTDESSystem #(
     clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter UART modules
     baudRate=9600, // Changing this may require changing the size of reg clockCounter in UART modules
@@ -28,9 +29,11 @@ module FullTDESSystem #(
     reg [0:headSize*8-1] head;
     reg [0:7] command;
     wire [0:dataLengthSize*8-1] dataLength;
+    wire [0:dataLengthSize*8-1] forwardedDataLength;
     wire [0:keySize*8-1] key1, key2, key3;
     wire encrypt;
     // [1_dataLength,2_key1,3_key2,4_key3] Index represents sending order
+    assign forwardedDataLength = head[8                  :(dataLengthSize+1        )*8-1];
     assign dataLength = head[0                           :(dataLengthSize          )*8-1];
     assign key1       = head[(dataLengthSize          )*8:(dataLengthSize+keySize  )*8-1];
     assign key2       = head[(dataLengthSize+keySize  )*8:(dataLengthSize+keySize*2)*8-1];
@@ -39,7 +42,7 @@ module FullTDESSystem #(
 
     reg [0:63] dataBlockIn;
     wire [0:63] dataBlockOut;
-    reg [0:63] dataBlockOutBuffer;
+    reg buffered;
     reg pipelineClk;
     
     TripleDES TDES(
@@ -69,7 +72,7 @@ module FullTDESSystem #(
         .packetRecievedSignal(packetRecievedSignal)
     );
     
-    wire [0:7] transmitPacket = dataBlockOut[0:7];
+    reg [0:7] transmitPacket;
     wire packetTransmittedSignal;
     wire transmit = state == receivingTransmittingData || state == transmittingData;
     
@@ -92,10 +95,20 @@ module FullTDESSystem #(
     reg [0:6] pipelinePushCounter; // Counts the amount of pushes we need to get data to output
 
     always @(*) begin
-        if (pushingData) pipelineClk = clk;
+        if (state == pushingData) pipelineClk = clk;
         else pipelineClk = blockCounter == 8;
+        // Should replace with shift register as buffer
+        case (blockCounter)
+            0: transmitPacket = dataBlockOut[0:7];
+            1: transmitPacket = dataBlockOut[8:15];
+            2: transmitPacket = dataBlockOut[16:23];
+            3: transmitPacket = dataBlockOut[24:7];
+            4: transmitPacket = dataBlockOut[0:7];
+            5: transmitPacket = dataBlockOut[0:7];
+            6: transmitPacket = dataBlockOut[0:7];
+            7: transmitPacket = dataBlockOut[0:7];
+        endcase
     end
-    
     always @(posedge clk) begin
         if(reset) begin
             state <= waitingCommand;
@@ -107,20 +120,20 @@ module FullTDESSystem #(
             pipelineCounter <= 0;
             pipelinePushCounter <= 0;
         end else begin
-            // If we have received 8 packets (Pipeline Block)
-            if(blockCounter == 8) begin
-                dataBlockOutBuffer <= dataBlockOut;
+            // If we have received or sent 8 packets (Pipeline Block)
+            if(pipelineClk) begin
                 blockCounter <= 0;
+                //dataBlockOutBuffer <= dataBlockOut;
             end
             // Below is the state where receiving has stopped and we have to transmit what is left in the pipeline
             // This means we have to operate on packetTransmittedSignal
             if(state == transmittingData) begin
                 if(packetTransmittedSignal) begin
                     blockCounter <= blockCounter + 1;
-                    dataBlockOutBuffer <= {dataBlockOutBuffer[8:63],8'd0};
-                    if(pipelineClk) begin
+                    //dataBlockOutBuffer <= {dataBlockOutBuffer[8:63],8'd0};
+                    if(blockCounter == 7) begin
                         pipelineCounter <= pipelineCounter - 1;
-                        if(pipelineCounter == 1) begin
+                        if(pipelineCounter == 0) begin
                             state <= waitingCommand;
                         end
                     end
@@ -131,7 +144,9 @@ module FullTDESSystem #(
             // Therefore we can operate on FPGA clk
             else if (state == pushingData) begin
                 pipelinePushCounter <= pipelinePushCounter -1;
-                if(pipelinePushCounter == 1) state <= transmittingData;
+                if(pipelinePushCounter == 1) begin
+                    state <= transmittingData;
+                end
             end
             // Below are states that receive data
             // This means we have to operate on packetRecievedSignal for synchronization
@@ -151,16 +166,16 @@ module FullTDESSystem #(
                             headPacketsCounter <= headPacketsCounter - 1;
                             // If we will finish after exiting this always block
                             if(headPacketsCounter == 1) begin
-                                dataPacketsCounter <= dataLength;
+                                dataPacketsCounter <= forwardedDataLength;
                                 state <= receivingData;
                             end
                         end
                         receivingData: begin
+                            blockCounter <= blockCounter + 1;
+                            dataPacketsCounter <= dataPacketsCounter - 1;
                             // [dataBlock1, dataBlock2, dataBlock3]
                             // To achieve the above requirement we should shift left!
-                            blockCounter <= blockCounter + 1;
                             dataBlockIn <= {dataBlockIn[8:63],receivedPacket};
-                            dataPacketsCounter <= dataPacketsCounter - 1;
                             // If we will finish receiving after exiting this always block
                             if(dataPacketsCounter == 1) begin
                                 // Will the data reach the end of the pipeline after existing this always block?
@@ -168,7 +183,8 @@ module FullTDESSystem #(
                                     state <= transmittingData;
                                 end
                                 else begin
-                                    pipelinePushCounter <= DESStages*3-pipelineCounter;
+                                    // subtract one because by the time this finishes we would have sent one more block
+                                    pipelinePushCounter <= DESStages*3-pipelineCounter-1; 
                                     state <= pushingData;
                                 end
                             end
@@ -181,7 +197,7 @@ module FullTDESSystem #(
                             // Shift left
                             dataBlockIn <= {dataBlockIn[8:63],receivedPacket};
                             // Shift left
-                            dataBlockOutBuffer <= {dataBlockOutBuffer[8:63],8'd0};
+                            //dataBlockOutBuffer <= {dataBlockOutBuffer[8:63],8'd0};
                             dataPacketsCounter <= dataPacketsCounter - 1;
                             if(dataPacketsCounter == 1) begin
                                 state <= transmittingData;
@@ -190,6 +206,7 @@ module FullTDESSystem #(
                     endcase
                 end
             end
+            if(state == receivingData && pipelineClk) pipelineCounter <= pipelineCounter + 1;
         end
     end
 endmodule

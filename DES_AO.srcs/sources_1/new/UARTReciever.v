@@ -8,7 +8,10 @@ module UARTReceiver #(
     input rx,
     // To store full packet
     output reg [0:7] data,
-    // Goes high for once clock cycle to indicate that a packet is received
+    // Goes high for one clock cycle (negative edge to negative edge
+    // so it is guaranteed to be sampled exactly once at positive edge)
+    // to indicate that a packet has been received 
+    // Does not wait for stop bit to be sent
     output reg packetRecievedSignal 
     );
     localparam waitingStartBit = 2'b00;

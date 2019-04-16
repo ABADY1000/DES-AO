@@ -9,12 +9,12 @@ module FullTDESSystemTestBench;
 parameter clockFrequencyUserDevice = 1_000_000_000; // 1 GHz. Change this in clock def as well
 parameter clockFrequencyFPGA = 100_000_000; // 100 MHz. Change this in clock def as well
 parameter textSize = 8*3; // 24 Bytes
-parameter baudRateUserDevice = 9600;
-parameter baudRateFPGA = 9600;
+parameter baudRateUserDevice = 1_000_000;
+parameter baudRateFPGA = 1_000_000;
 
 reg clkUserDevice, resetUserDevice, clkFPGA, resetFPGA;
 wire rxUserDevice, txUserDevice, rxFPGA, txFPGA;
-wire userDeviceState;
+wire [0:1] userDeviceState;
 reg start;
 
 reg [0:7] command;
@@ -35,8 +35,8 @@ FullTDESSystem #(
 );
 
 UserDeviceSim #(
-    .clockFrequency(clockFrequencyFPGA),
-    .baudRate(baudRateFPGA),
+    .clockFrequency(clockFrequencyUserDevice),
+    .baudRate(baudRateUserDevice),
     .sendMessageSize(28+textSize),
     .receiveMessageSize(textSize)
     )USER(
@@ -63,17 +63,17 @@ initial begin
     clkUserDevice = 0;
     resetFPGA = 1;
     resetUserDevice = 1;
-    @(posedge clkFPGA); // Slower clock
+    @(negedge clkFPGA); // Slower clock
     resetFPGA = 0;
     resetUserDevice = 0;
-    command = "D";
+    command = "E";
+    dataLength = textSize;
     key1 = 64'h0123456789ABCDEF;
     key2 = 64'h23456789ABCDEF01;
     key3 = 64'h456789ABCDEF0123;
-    dataLength = textSize*8;
-    text = "The quick brown fox jumped over the lazy dog's back";
     // text is
-    // {64'h5468652071756663,64'h6B2062726F776E20,64'h666F78206A756D70};
+    // text = "The quick brown fox jumped over the lazy dog's back";
+    text = {64'h5468652071756663,64'h6B2062726F776E20,64'h666F78206A756D70};
     // Cipher text should be
     // {64'hA826FD8CE53B855F,64'hCCE21C8112256FE6,64'h68D5C05DD9B6B900}
     start = 1;

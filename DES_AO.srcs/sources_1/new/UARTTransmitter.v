@@ -8,8 +8,9 @@ module UARTTransmitter #(
     input [0:7] data,
     output reg tx,
     // Goes high for one clock cycle (negative edge to negative edge
-    // so it is guaranteed to be samples exactly once at positive edge)
-    // to indicate that a packet has been transmitted
+    // so it is guaranteed to be sampled exactly once at positive edge)
+    // to indicate that a packet has been transmitted 
+    // Does not wait for stop bit to be sent
     output reg packetTransmittedSignal
     );
     localparam waitingTransmitSignal = 0;
@@ -56,6 +57,7 @@ module UARTTransmitter #(
                         // If we are going to finish at the end of this always block
                         if(bitCounter == 4'd9) begin
                             bitCounter <= 0;
+                            state <= waitingTransmitSignal;
                             // If we still want to transmit then start right away
                             // No need to go back to waitingTransmitSignal and waste a clock cycle
                             if(transmit) rightshiftreg <= {1'b1,data,1'b0};
@@ -69,7 +71,7 @@ module UARTTransmitter #(
     always @(negedge clk) begin
         packetTransmittedSignal = 1'b0;
         if(state == sendingPacket && clockCounter == baudClockCount
-        && bitCounter == 4'd9 && didNotSendTransmittedSignal) begin
+        && bitCounter == 4'd8 && didNotSendTransmittedSignal) begin
             didNotSendTransmittedSignal = 1'b0;
             packetTransmittedSignal = 1'b1;
         end

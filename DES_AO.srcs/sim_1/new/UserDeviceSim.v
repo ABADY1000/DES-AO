@@ -1,6 +1,6 @@
 module UserDeviceSim
 #(
-    sendMessageSize = 27 + 8, // In bytes
+    sendMessageSize = 28 + 8, // In bytes
     receiveMessageSize = 8, // In bytes
     clockFrequency = 100_000_000, // Changing this may require changing the size of reg clockCounter UART modules
     baudRate=9600, // Changing this may require changing the size of reg clockCounter in UART modules
@@ -11,7 +11,7 @@ module UserDeviceSim
     input rx,
     output tx,
     input [0:8*sendMessageSize-1] messageToSend,
-    output reg [0:8*receiveMessageSize-1]receivedMessage,
+    output [0:8*receiveMessageSize-1]receivedMessage,
     output reg [0:1] state,
     input start
     );
@@ -22,10 +22,11 @@ module UserDeviceSim
     localparam receiving = 2'b11;
     reg [0:8*sendMessageSize-1] transmitBuffer;
     reg [0:8*receiveMessageSize-1] receiveBuffer;
+    assign receivedMessage = receiveBuffer;
     wire [0:7] receivedPacket;
     wire [0:7] transmitPacket = transmitBuffer[0:7];
     wire packetReceivedSignal, packetTransmittedSignal;
-    wire transmit = state == sending;
+    wire transmit = state == sending || state == sendingReceiving;
     
     reg [0:23] transmittedCounter, receivedCounter;
     
@@ -59,40 +60,47 @@ module UserDeviceSim
         else /*receivedCounter > 0*/state = receiving;
     end
     always @(posedge clk) begin
-        case(state)
-            waiting: begin
-                if(start) begin
-                    transmitBuffer <= messageToSend;
-                    transmittedCounter <= sendMessageSize;
-                    receivedCounter <= receiveMessageSize;
+        if(reset) begin
+            transmittedCounter <= 0;
+            receivedCounter <= 0;
+            transmitBuffer <= 0;
+            receiveBuffer <= 0;
+        end else begin
+            case(state)
+                waiting: begin
+                    if(start) begin
+                        transmitBuffer <= messageToSend;
+                        transmittedCounter <= sendMessageSize;
+                        receivedCounter <= receiveMessageSize;
+                    end
                 end
-            end
-            sending: begin
-                if(packetTransmittedSignal) begin
-                    transmittedCounter <= transmittedCounter - 1;
-                    // Shift left
-                    transmitBuffer <= {transmitBuffer[8:8*sendMessageSize-1],8'd0};
+                sending: begin
+                    if(packetTransmittedSignal) begin
+                        transmittedCounter <= transmittedCounter - 1;
+                        // Shift left
+                        transmitBuffer <= {transmitBuffer[8:8*sendMessageSize-1],8'd0};
+                    end
                 end
-            end
-            sendingReceiving: begin
-                if(packetTransmittedSignal) begin
-                    transmittedCounter <= transmittedCounter - 1;
-                    // Shift left
-                    transmitBuffer <= {transmitBuffer[8:8*sendMessageSize-1],8'd0};
+                sendingReceiving: begin
+                    if(packetTransmittedSignal) begin
+                        transmittedCounter <= transmittedCounter - 1;
+                        // Shift left
+                        transmitBuffer <= {transmitBuffer[8:8*sendMessageSize-1],8'd0};
+                    end
+                    if(packetReceivedSignal) begin
+                        receivedCounter <= receivedCounter-1;
+                        // Shift left
+                        receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],transmitPacket};
+                    end
                 end
-                if(packetReceivedSignal) begin
-                    receivedCounter <= receivedCounter-1;
-                    // Shift left
-                    receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],transmitPacket};
+                receiving: begin 
+                    if(packetReceivedSignal) begin
+                        receivedCounter <= receivedCounter-1;
+                        // Shift left
+                        receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],transmitPacket};
+                    end
                 end
-            end
-            receiving: begin 
-                if(packetReceivedSignal) begin
-                    receivedCounter <= receivedCounter-1;
-                    // Shift left
-                    receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],transmitPacket};
-                end
-            end
-        endcase
+            endcase
+        end
     end
 endmodule
