@@ -26,7 +26,6 @@ repeat(messageLength-1) begin
     message = {message[8:messageLength*8-1],8'd0};
 end
 transmit = 0;
-@(posedge packetTransmittedSignal);
 repeat(2000) @(posedge clk);
 $finish;
 end

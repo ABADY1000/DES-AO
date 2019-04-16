@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="5725548994000fs"></ZoomStartTime>
-      <ZoomEndTime time="9545548994001fs"></ZoomEndTime>
-      <Cursor1Time time="7215548994000fs"></Cursor1Time>
+      <ZoomStartTime time="3854365000000fs"></ZoomStartTime>
+      <ZoomEndTime time="3854507600001fs"></ZoomEndTime>
+      <Cursor1Time time="3854420000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="231"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="34" />
    <wvobject type="divider" fp_name="divider572">
@@ -43,10 +43,12 @@
    <wvobject fp_name="/UARTRecieverTestBench/data" type="array">
       <obj_property name="ElementShortName">data[0:7]</obj_property>
       <obj_property name="ObjectShortName">data[0:7]</obj_property>
+      <obj_property name="Radix">ASCIIRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/baudRateCounter" type="array">
       <obj_property name="ElementShortName">baudRateCounter[0:14]</obj_property>
       <obj_property name="ObjectShortName">baudRateCounter[0:14]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/baudClk" type="logic">
       <obj_property name="ElementShortName">baudClk</obj_property>
@@ -104,6 +106,7 @@
    <wvobject fp_name="/UARTRecieverTestBench/UT/clockCounter" type="array">
       <obj_property name="ElementShortName">clockCounter[0:14]</obj_property>
       <obj_property name="ObjectShortName">clockCounter[0:14]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/samplingCounter" type="array">
       <obj_property name="ElementShortName">samplingCounter[0:3]</obj_property>
@@ -116,42 +119,52 @@
    <wvobject fp_name="/UARTRecieverTestBench/UT/state" type="array">
       <obj_property name="ElementShortName">state[0:1]</obj_property>
       <obj_property name="ObjectShortName">state[0:1]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/clockFrequency" type="array">
       <obj_property name="ElementShortName">clockFrequency[31:0]</obj_property>
       <obj_property name="ObjectShortName">clockFrequency[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/baudRate" type="array">
       <obj_property name="ElementShortName">baudRate[31:0]</obj_property>
       <obj_property name="ObjectShortName">baudRate[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/samplingRate" type="array">
       <obj_property name="ElementShortName">samplingRate[31:0]</obj_property>
       <obj_property name="ObjectShortName">samplingRate[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/waitingStartBit" type="array">
       <obj_property name="ElementShortName">waitingStartBit[1:0]</obj_property>
       <obj_property name="ObjectShortName">waitingStartBit[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/readingStartBit" type="array">
       <obj_property name="ElementShortName">readingStartBit[1:0]</obj_property>
       <obj_property name="ObjectShortName">readingStartBit[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/readingPacket" type="array">
       <obj_property name="ElementShortName">readingPacket[1:0]</obj_property>
       <obj_property name="ObjectShortName">readingPacket[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/waitingStopBit" type="array">
       <obj_property name="ElementShortName">waitingStopBit[1:0]</obj_property>
       <obj_property name="ObjectShortName">waitingStopBit[1:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/baudClockCount" type="array">
       <obj_property name="ElementShortName">baudClockCount[31:0]</obj_property>
       <obj_property name="ObjectShortName">baudClockCount[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/samplingClockCount" type="array">
       <obj_property name="ElementShortName">samplingClockCount[31:0]</obj_property>
       <obj_property name="ObjectShortName">samplingClockCount[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/halfSamplingRate" type="array">
       <obj_property name="ElementShortName">halfSamplingRate[31:0]</obj_property>

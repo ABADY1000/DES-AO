@@ -7,9 +7,9 @@ module UARTTransmitter #(
     input transmit,
     input [0:7] data,
     output reg tx,
-    // Positive edge indicates that a new packet has been fully transmitted.
-    // Negative edge indicates that a new packet has been copied to internal buffer
-    // and has just started being transmitted.
+    // Goes high for one clock cycle (negative edge to negative edge
+    // so it is guaranteed to be samples exactly once at positive edge)
+    // to indicate that a packet has been transmitted
     output reg packetTransmittedSignal
     );
     localparam waitingTransmitSignal = 0;
@@ -21,6 +21,7 @@ module UARTTransmitter #(
     reg [0:14] clockCounter;
     reg [0:3] bitCounter;
     reg state;
+    reg didNotSendTransmittedSignal;
     
     always @(*) begin
         if(state == waitingTransmitSignal) tx = 1'b1;
@@ -47,13 +48,12 @@ module UARTTransmitter #(
                     end
                 end
                 sendingPacket: begin
-                    packetTransmittedSignal <= 1'b0;
                     if(clockCounter == baudClockCount) begin
+                        didNotSendTransmittedSignal = 1'b1;
                         rightshiftreg <= {1'b0,rightshiftreg[0:8]};
                         bitCounter <= bitCounter + 1;
                         // If we are going to finish at the end of this always block
                         if(bitCounter == 4'd9) begin
-                            packetTransmittedSignal <= 1'b1;
                             bitCounter <= 0;
                             // If we still want to transmit then start right away
                             // No need to go back to waitingTransmitSignal and waste a clock cycle
@@ -63,6 +63,14 @@ module UARTTransmitter #(
                     end
                 end
             endcase
+        end
+    end
+    always @(negedge clk) begin
+        packetTransmittedSignal = 1'b0;
+        if(state == sendingPacket && clockCounter == baudClockCount
+        && bitCounter == 4'd9 && didNotSendTransmittedSignal) begin
+            didNotSendTransmittedSignal = 1'b0;
+            packetTransmittedSignal = 1'b1;
         end
     end
 endmodule

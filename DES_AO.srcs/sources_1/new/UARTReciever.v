@@ -8,9 +8,7 @@ module UARTReceiver #(
     input rx,
     // To store full packet
     output reg [0:7] data,
-    // Positive edge indicates that a new packet has been fully copied to data
-    // Negative edge indicates that a new packet has just started being read
-    // Read packet at positive edge or while the signal is high
+    // Goes high for once clock cycle to indicate that a packet is received
     output reg packetRecievedSignal 
     );
     localparam waitingStartBit = 2'b00;
@@ -26,6 +24,7 @@ module UARTReceiver #(
     reg [0:3] samplingCounter;
     reg [0:2] bitCounter;
     reg [0:1] state;
+    reg didNotSendReceivedSignal;
     always @(posedge clk) begin
         if(reset) begin
             //Reset all internal registers;
@@ -37,12 +36,11 @@ module UARTReceiver #(
         else begin
             if(clockCounter == samplingClockCount)clockCounter <= 0;
             else clockCounter <= clockCounter + 1;
-            
             case (state)
                 waitingStartBit: begin
+                    didNotSendReceivedSignal <= 1'b1;
                     // Wait for rx to be low then start reading
                     if(~rx) begin
-                        packetRecievedSignal <= 1'b0;
                         state <= readingStartBit;
                         clockCounter <= 0;
                     end
@@ -79,12 +77,19 @@ module UARTReceiver #(
                     // If rx is high that means we are either at the last high bit
                     // Or we are at the stopping bit, either way we can transition
                     // Directly to the initial state
-                    packetRecievedSignal <= 1'b1;
                     if(rx) begin
                         state <= waitingStartBit;
                     end
                 end
             endcase
         end
-    end 
+    end
+    // Sample at negative edge to guarantee that the signal is read exactly once at positive edge
+    always @(negedge clk) begin
+        packetRecievedSignal <= 1'b0;
+        if(state == waitingStopBit && didNotSendReceivedSignal) begin
+            packetRecievedSignal <= 1'b1;
+            didNotSendReceivedSignal <= 1'b0;
+        end
+    end
 endmodule
