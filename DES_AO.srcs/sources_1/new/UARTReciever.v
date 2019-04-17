@@ -41,7 +41,6 @@ module UARTReceiver #(
             else clockCounter <= clockCounter + 1;
             case (state)
                 waitingStartBit: begin
-                    didNotSendReceivedSignal <= 1'b1;
                     // Wait for rx to be low then start reading
                     if(~rx) begin
                         state <= readingStartBit;
@@ -71,6 +70,7 @@ module UARTReceiver #(
                             if(bitCounter == 3'b111) begin
                                 // Cannot transition to initial state directly
                                 // Because we might be in the middle of a low bit
+                                didNotSendReceivedSignal <= 1'b1;
                                 state <= waitingStopBit;
                             end
                         end
@@ -80,6 +80,7 @@ module UARTReceiver #(
                     // If rx is high that means we are either at the last high bit
                     // Or we are at the stopping bit, either way we can transition
                     // Directly to the initial state
+                    didNotSendReceivedSignal <= 1'b0;
                     if(rx) begin
                         state <= waitingStartBit;
                     end
@@ -92,7 +93,6 @@ module UARTReceiver #(
         packetRecievedSignal <= 1'b0;
         if(state == waitingStopBit && didNotSendReceivedSignal) begin
             packetRecievedSignal <= 1'b1;
-            didNotSendReceivedSignal <= 1'b0;
         end
     end
 endmodule

@@ -90,14 +90,14 @@ module UserDeviceSim
                     if(packetReceivedSignal) begin
                         receivedCounter <= receivedCounter-1;
                         // Shift left
-                        receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],transmitPacket};
+                        receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],receivedPacket};
                     end
                 end
                 receiving: begin 
                     if(packetReceivedSignal) begin
                         receivedCounter <= receivedCounter-1;
                         // Shift left
-                        receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],transmitPacket};
+                        receiveBuffer <= {receiveBuffer[8:8*receiveMessageSize-1],receivedPacket};
                     end
                 end
             endcase

@@ -1,5 +1,5 @@
 `timescale 1ps/1ps
-module FullTDESSystemTestBench;
+module FullTDESSystemTestBench_FullPipeline;
 // Plan:
 // UserDevice sends keys and text to FPGA
 // FPGA receives text from UserDevice
@@ -8,7 +8,7 @@ module FullTDESSystemTestBench;
 // UserDevice receives cipher text from FPGA
 parameter clockFrequencyUserDevice = 1_000_000_000; // 1 GHz. Change this in clock def as well
 parameter clockFrequencyFPGA = 100_000_000; // 100 MHz. Change this in clock def as well
-parameter textSize = 8*3; // 24 Bytes
+parameter textSize = 1148; // 1148 Bytes
 parameter baudRateUserDevice = 1_000_000;
 parameter baudRateFPGA = 1_000_000;
 
@@ -71,13 +71,12 @@ initial begin
     key1 = 64'h0123456789ABCDEF;
     key2 = 64'h23456789ABCDEF01;
     key3 = 64'h456789ABCDEF0123;
-    // text is
-    // text = "The quick brown fox jumped over the lazy dog's back";
-    text = {64'h5468652071756663,64'h6B2062726F776E20,64'h666F78206A756D70};
-    // Cipher text should be
-    // {64'hA826FD8CE53B855F,64'hCCE21C8112256FE6,64'h68D5C05DD9B6B900}
+    text = "I am trying to test if the module will work if the pipeline was full and it had to send and receive at the same time. Therefore, I am writing this long message. Its length should be greater than 432 bytes or characters so that it can fill the pipeline now I am tired so I will just copy. I am trying to test if the module will work if the pipeline was full and it had to send and receive at the same time. Therefore, I am writing this long message. Its length should be greater than 432 bytes or characters so that it can fill the pipeline now I am tired so I will just copyI am trying to test if the module will work if the pipeline was full and it had to send and receive at the same time. Therefore, I am writing this long message. Its length should be greater than 432 bytes or characters so that it can fill the pipeline now I am tired so I will just copy. I am trying to test if the module will work if the pipeline was full and it had to send and receive at the same time. Therefore, I am writing this long message. Its length should be greater than 432 bytes or characters so that it can fill the pipeline now I am tired so I will just copy";
     start = 1;
     @(posedge userDeviceState == 2'b00);
+    start = 0;
+    repeat(3000) @(posedge clkFPGA);
+    $display(cipherText);
     $finish;
 end
 endmodule

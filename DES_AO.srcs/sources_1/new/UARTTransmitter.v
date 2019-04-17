@@ -50,10 +50,12 @@ module UARTTransmitter #(
                 end
                 sendingPacket: begin
                     if(clockCounter == baudClockCount) begin
-                        didNotSendTransmittedSignal = 1'b1;
                         // Shift right
                         rightshiftreg <= {1'b0,rightshiftreg[0:8]};
                         bitCounter <= bitCounter + 1;
+                        
+                        if(bitCounter == 4'd7) didNotSendTransmittedSignal <= 1'b1;
+                        else didNotSendTransmittedSignal <= 1'b0;
                         // If we are going to finish at the end of this always block
                         if(bitCounter == 4'd9) begin
                             bitCounter <= 0;
@@ -69,11 +71,10 @@ module UARTTransmitter #(
         end
     end
     always @(negedge clk) begin
-        packetTransmittedSignal = 1'b0;
+        packetTransmittedSignal <= 1'b0;
         if(state == sendingPacket && clockCounter == baudClockCount
         && bitCounter == 4'd8 && didNotSendTransmittedSignal) begin
-            didNotSendTransmittedSignal = 1'b0;
-            packetTransmittedSignal = 1'b1;
+            packetTransmittedSignal <= 1'b1;
         end
     end
 endmodule

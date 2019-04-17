@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4935000000001fs"></ZoomEndTime>
-      <Cursor1Time time="425634734000fs"></Cursor1Time>
+      <ZoomStartTime time="4554640000000fs"></ZoomStartTime>
+      <ZoomEndTime time="20014640000001fs"></ZoomEndTime>
+      <Cursor1Time time="13458055000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="231"></NameColumnWidth>
-      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="25" />
+   <WVObjectSize size="26" />
    <wvobject type="divider" fp_name="divider215">
       <obj_property name="label">TestBench</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -92,9 +92,13 @@
       <obj_property name="ElementShortName">packetTransmittedSignal</obj_property>
       <obj_property name="ObjectShortName">packetTransmittedSignal</obj_property>
    </wvobject>
+   <wvobject fp_name="/UARTTransmitterTestBench/UT/didNotSendTransmittedSignal" type="logic">
+      <obj_property name="ElementShortName">didNotSendTransmittedSignal</obj_property>
+      <obj_property name="ObjectShortName">didNotSendTransmittedSignal</obj_property>
+   </wvobject>
    <wvobject fp_name="/UARTTransmitterTestBench/UT/clockCounter" type="array">
-      <obj_property name="ElementShortName">clockCounter[0:14]</obj_property>
-      <obj_property name="ObjectShortName">clockCounter[0:14]</obj_property>
+      <obj_property name="ElementShortName">clockCounter[0:19]</obj_property>
+      <obj_property name="ObjectShortName">clockCounter[0:19]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTTransmitterTestBench/UT/bitCounter" type="array">

@@ -7,7 +7,10 @@ module FullTDESSystem #(
     input clk,
     input reset,
     input rx,
-    output tx
+    output tx,
+    output [0:5] headPacketsCounterDebug,
+    output [0:23] dataPacketCounterDebug,
+    output [0:2] stateDebug
     );
     localparam baudClockCount = clockFrequency / baudRate;
     
@@ -42,7 +45,6 @@ module FullTDESSystem #(
 
     reg [0:63] dataBlockIn;
     wire [0:63] dataBlockOut;
-    reg buffered;
     reg pipelineClk;
     
     TripleDES TDES(
@@ -94,6 +96,11 @@ module FullTDESSystem #(
     reg [0:6] pipelineCounter; // Counts the amount of data in the pipeline
     reg [0:6] pipelinePushCounter; // Counts the amount of pushes we need to get data to output
 
+    // Debug variables(can be removed)
+    assign dataPacketCounterDebug = dataPacketsCounter;
+    assign stateDebug = state;
+    assign headPacketsCounterDebug = headPacketsCounter;
+    
     always @(*) begin
         if (state == pushingData) pipelineClk = clk;
         else pipelineClk = blockCounter == 8;
@@ -102,11 +109,11 @@ module FullTDESSystem #(
             0: transmitPacket = dataBlockOut[0:7];
             1: transmitPacket = dataBlockOut[8:15];
             2: transmitPacket = dataBlockOut[16:23];
-            3: transmitPacket = dataBlockOut[24:7];
-            4: transmitPacket = dataBlockOut[0:7];
-            5: transmitPacket = dataBlockOut[0:7];
-            6: transmitPacket = dataBlockOut[0:7];
-            7: transmitPacket = dataBlockOut[0:7];
+            3: transmitPacket = dataBlockOut[24:31];
+            4: transmitPacket = dataBlockOut[32:39];
+            5: transmitPacket = dataBlockOut[40:47];
+            6: transmitPacket = dataBlockOut[48:55];
+            7: transmitPacket = dataBlockOut[56:63];
         endcase
     end
     always @(posedge clk) begin
@@ -134,6 +141,7 @@ module FullTDESSystem #(
                     if(blockCounter == 7) begin
                         pipelineCounter <= pipelineCounter - 1;
                         if(pipelineCounter == 0) begin
+                            pipelineCounter <= 0;
                             state <= waitingCommand;
                         end
                     end
@@ -188,7 +196,7 @@ module FullTDESSystem #(
                                     state <= pushingData;
                                 end
                             end
-                            else if(pipelineCounter == DESStages*3-1) begin
+                            else if(pipelineCounter == DESStages*3) begin
                                 state <= receivingTransmittingData;
                             end
                         end

@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="3854365000000fs"></ZoomStartTime>
-      <ZoomEndTime time="3854507600001fs"></ZoomEndTime>
-      <Cursor1Time time="3854420000000fs"></Cursor1Time>
+      <ZoomStartTime time="7121838100000fs"></ZoomStartTime>
+      <ZoomEndTime time="7121915400001fs"></ZoomEndTime>
+      <Cursor1Time time="7121895900000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="231"></NameColumnWidth>
-      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="34" />
+   <WVObjectSize size="35" />
    <wvobject type="divider" fp_name="divider572">
       <obj_property name="label">TestBench</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -99,18 +99,22 @@
       <obj_property name="ElementShortName">packetRecievedSignal</obj_property>
       <obj_property name="ObjectShortName">packetRecievedSignal</obj_property>
    </wvobject>
+   <wvobject fp_name="/UARTRecieverTestBench/UT/didNotSendReceivedSignal" type="logic">
+      <obj_property name="ElementShortName">didNotSendReceivedSignal</obj_property>
+      <obj_property name="ObjectShortName">didNotSendReceivedSignal</obj_property>
+   </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/count" type="logic">
       <obj_property name="ElementShortName">count</obj_property>
       <obj_property name="ObjectShortName">count</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/clockCounter" type="array">
-      <obj_property name="ElementShortName">clockCounter[0:14]</obj_property>
-      <obj_property name="ObjectShortName">clockCounter[0:14]</obj_property>
+      <obj_property name="ElementShortName">clockCounter[0:19]</obj_property>
+      <obj_property name="ObjectShortName">clockCounter[0:19]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/samplingCounter" type="array">
-      <obj_property name="ElementShortName">samplingCounter[0:3]</obj_property>
-      <obj_property name="ObjectShortName">samplingCounter[0:3]</obj_property>
+      <obj_property name="ElementShortName">samplingCounter[0:4]</obj_property>
+      <obj_property name="ObjectShortName">samplingCounter[0:4]</obj_property>
    </wvobject>
    <wvobject fp_name="/UARTRecieverTestBench/UT/bitCounter" type="array">
       <obj_property name="ElementShortName">bitCounter[0:2]</obj_property>
