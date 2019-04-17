@@ -19,7 +19,7 @@ module UARTTransmitter #(
     localparam baudClockCount = clockFrequency / baudRate;
     
     reg [0:9] rightshiftreg;
-    reg [0:19] clockCounter;
+    reg [0:29] clockCounter;
     reg [0:3] bitCounter;
     reg state;
     reg didNotSendTransmittedSignal;

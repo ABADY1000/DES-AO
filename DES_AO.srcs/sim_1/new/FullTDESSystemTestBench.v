@@ -74,17 +74,21 @@ initial begin
     // text is
     // text = "The quick brown fox jumped over the lazy dog's back";
     text = {64'h5468652071756663,64'h6B2062726F776E20,64'h666F78206A756D70};
+    $display(text);
     // Cipher text should be
     // {64'hA826FD8CE53B855F,64'hCCE21C8112256FE6,64'h68D5C05DD9B6B900}
     start = 1;
     @(posedge userDeviceState == 2'b00);
+    $display(cipherText);
     start = 0;
     repeat(3000) @(posedge clkFPGA);
     command = "D";
     text = {64'hA826FD8CE53B855F,64'hCCE21C8112256FE6,64'h68D5C05DD9B6B900};
+    $display(text);
     start = 1;
     @(posedge userDeviceState == 2'b00);
     start = 0;
+    $display(cipherText);
     repeat(20000) @(posedge clkFPGA);
     $finish;
 end

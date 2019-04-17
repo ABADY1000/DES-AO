@@ -23,7 +23,7 @@ module UARTReceiver #(
     localparam samplingClockCount = baudClockCount / samplingRate;
     localparam halfSamplingRate = samplingRate / 2;
     
-    reg [0:19] clockCounter;
+    reg [0:29] clockCounter;
     reg [0:4] samplingCounter;
     reg [0:2] bitCounter;
     reg [0:1] state;
