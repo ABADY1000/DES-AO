@@ -82,7 +82,7 @@ module UserDeviceSim
                     end
                 end
                 sendingReceiving: begin
-                    if(packetTransmittedSignal) begin
+                    if(packetReceivedSignal) begin
                         transmittedCounter <= transmittedCounter - 1;
                         // Shift left
                         transmitBuffer <= {transmitBuffer[8:8*sendMessageSize-1],8'd0};

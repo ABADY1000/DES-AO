@@ -1,4 +1,5 @@
 `timescale 1ps/1ps
+// This test bench attempts to test the case where the pipeline was not filled completely
 module FullTDESSystemTestBench;
 // Plan:
 // UserDevice sends keys and text to FPGA

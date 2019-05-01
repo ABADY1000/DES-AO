@@ -11,215 +11,230 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="164266500fs"></ZoomStartTime>
-      <ZoomEndTime time="218798995fs"></ZoomEndTime>
-      <Cursor1Time time="174516000fs"></Cursor1Time>
+      <ZoomStartTime time="177603700fs"></ZoomStartTime>
+      <ZoomEndTime time="407916295fs"></ZoomEndTime>
+      <Cursor1Time time="365000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="137"></NameColumnWidth>
-      <ValueColumnWidth column_width="120"></ValueColumnWidth>
+      <ValueColumnWidth column_width="151"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
-   <wvobject fp_name="/DESTestBench/clk" type="logic">
+   <WVObjectSize size="40" />
+   <wvobject fp_name="/DESTestBench/DES1/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/DESTestBench/reset" type="logic">
+   <wvobject fp_name="/DESTestBench/DES1/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/DESTestBench/encrypt" type="logic">
+   <wvobject fp_name="/DESTestBench/DES1/encrypt" type="logic">
       <obj_property name="ElementShortName">encrypt</obj_property>
       <obj_property name="ObjectShortName">encrypt</obj_property>
    </wvobject>
-   <wvobject fp_name="/DESTestBench/key" type="array">
+   <wvobject fp_name="/DESTestBench/DES1/key" type="array">
       <obj_property name="ElementShortName">key[0:63]</obj_property>
       <obj_property name="ObjectShortName">key[0:63]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/dataIn" type="array">
       <obj_property name="ElementShortName">dataIn[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataIn[0:63]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck3" type="array">
-      <obj_property name="ElementShortName">ck3[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck3[0:47]</obj_property>
+   <wvobject fp_name="/DESTestBench/DES1/InitReg/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">InitRegOut</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/REG1/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG1OUT</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/REG2/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
+      <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG2OUT</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG3/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG3OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck4" type="array">
-      <obj_property name="ElementShortName">ck4[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck4[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG4/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG4OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck5" type="array">
-      <obj_property name="ElementShortName">ck5[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck5[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG5/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG5OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck6" type="array">
-      <obj_property name="ElementShortName">ck6[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck6[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG6/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG6OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck7" type="array">
-      <obj_property name="ElementShortName">ck7[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck7[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG7/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG7OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck8" type="array">
-      <obj_property name="ElementShortName">ck8[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck8[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG8/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG8OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck9" type="array">
-      <obj_property name="ElementShortName">ck9[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck9[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG9/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG9OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck10" type="array">
-      <obj_property name="ElementShortName">ck10[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck10[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG10/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG10OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck11" type="array">
-      <obj_property name="ElementShortName">ck11[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck11[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG11/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG11OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck12" type="array">
-      <obj_property name="ElementShortName">ck12[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck12[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG12/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG12OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck13" type="array">
-      <obj_property name="ElementShortName">ck13[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck13[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG13/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG13OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck14" type="array">
-      <obj_property name="ElementShortName">ck14[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck14[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG14/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG14OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck15" type="array">
-      <obj_property name="ElementShortName">ck15[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck15[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG15/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG15OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/DESTestBench/DES1/ck16" type="array">
-      <obj_property name="ElementShortName">ck16[0:47]</obj_property>
-      <obj_property name="ObjectShortName">ck16[0:47]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="CustomSignalColor">#FFD700</obj_property>
-      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/REG16/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">REG16OUT</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/DES1/FinalReg/dataOut" type="array">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
+      <obj_property name="label">FinalRegOut</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/DESTestBench/dataOut" type="array">
       <obj_property name="ElementShortName">dataOut[0:63]</obj_property>
       <obj_property name="ObjectShortName">dataOut[0:63]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck1" type="array">
+      <obj_property name="ElementShortName">ck1[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck1[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck2" type="array">
+      <obj_property name="ElementShortName">ck2[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck2[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck3" type="array">
+      <obj_property name="ElementShortName">ck3[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck3[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck4" type="array">
+      <obj_property name="ElementShortName">ck4[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck4[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck5" type="array">
+      <obj_property name="ElementShortName">ck5[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck5[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck6" type="array">
+      <obj_property name="ElementShortName">ck6[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck6[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck7" type="array">
+      <obj_property name="ElementShortName">ck7[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck7[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck8" type="array">
+      <obj_property name="ElementShortName">ck8[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck8[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck9" type="array">
+      <obj_property name="ElementShortName">ck9[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck9[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck10" type="array">
+      <obj_property name="ElementShortName">ck10[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck10[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck11" type="array">
+      <obj_property name="ElementShortName">ck11[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck11[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck12" type="array">
+      <obj_property name="ElementShortName">ck12[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck12[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck13" type="array">
+      <obj_property name="ElementShortName">ck13[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck13[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck14" type="array">
+      <obj_property name="ElementShortName">ck14[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck14[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck15" type="array">
+      <obj_property name="ElementShortName">ck15[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck15[0:47]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/DESTestBench/DES1/ck16" type="array">
+      <obj_property name="ElementShortName">ck16[0:47]</obj_property>
+      <obj_property name="ObjectShortName">ck16[0:47]</obj_property>
    </wvobject>
 </wave_config>

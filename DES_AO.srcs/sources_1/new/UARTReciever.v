@@ -1,3 +1,4 @@
+// Author: Omar Alama https://github.com/OasisArtisan
 module UARTReceiver #(
     clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter
     baudRate=9600, // Changing this may require changing the size of reg clockCounter
@@ -72,18 +73,25 @@ module UARTReceiver #(
                                 // Because we might be in the middle of a low bit
                                 didNotSendReceivedSignal <= 1'b1;
                                 state <= waitingStopBit;
+                                samplingCounter <= 0;
                             end
                         end
                     end
                 end
                 waitingStopBit: begin
-                    // If rx is high that means we are either at the last high bit
-                    // Or we are at the stopping bit, either way we can transition
-                    // Directly to the initial state
-                    didNotSendReceivedSignal <= 1'b0;
-                    if(rx) begin
-                        state <= waitingStartBit;
+                    // To keep the received signal constant we must attempt to also sample the stop bit
+                    if(clockCounter == samplingClockCount) begin
+                        samplingCounter <= samplingCounter + 1;
+                        if(samplingCounter == samplingRate-1) begin
+                            // No need to actually read rx it should be 1.
+                            // If it is not that means the sender is not obeying baud rate
+                            // and the message will contain errors
+                            didNotSendReceivedSignal <= 1'b0;
+                            samplingCounter <= 0;
+                            state <= waitingStartBit;
+                        end
                     end
+                    
                 end
             endcase
         end
@@ -91,7 +99,8 @@ module UARTReceiver #(
     // Sample at negative edge to guarantee that the signal is read exactly once at positive edge
     always @(negedge clk) begin
         packetRecievedSignal <= 1'b0;
-        if(state == waitingStopBit && didNotSendReceivedSignal) begin
+        if(state == waitingStopBit && didNotSendReceivedSignal
+           && clockCounter == samplingClockCount && samplingCounter == samplingRate-1) begin
             packetRecievedSignal <= 1'b1;
         end
     end

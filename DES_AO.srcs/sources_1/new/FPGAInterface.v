@@ -29,7 +29,7 @@ module FPGAInterface(
     
     assign bcd[15:12] = 0;
     
-    BinaryToBCD2 BTBCD(
+    BinaryToBCD BTBCD(
         .number(binaryInput),
         .ones(bcd[3:0]),
         .tens(bcd[7:4]),

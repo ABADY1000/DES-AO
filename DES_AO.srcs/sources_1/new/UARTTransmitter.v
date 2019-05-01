@@ -1,3 +1,4 @@
+// Author: Omar Alama https://github.com/OasisArtisan
 module UARTTransmitter #(
     clockFrequency=100_000_000, // Changing this may require changing the size of reg clockCounter
     baudRate=9600 // Changing this may require changing the size of reg clockCounter

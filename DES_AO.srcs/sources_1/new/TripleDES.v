@@ -35,6 +35,7 @@ module TripleDES(
         .key(ck3),
         .dataOut(dataOut)
     );
+    // Switch key order based on whether we are encrypting or decrypting
     always @(*) begin
         if(encrypt) begin
             ck1 = key1;
